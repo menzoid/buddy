@@ -2,3 +2,5 @@
 <%= @event.date %>
 <%= @event.time %>
 <%= @event.description %>
+
+<%= link_to "Join Event", new_event_booking_path(@event), class: "btn btn-ghost" %>
