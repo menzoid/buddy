@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @featured_event = Event.all.sample(5)
+    @featured_events = Event.all.sample(5)
     @events = Event.all
     @categories = Category.all
   end
