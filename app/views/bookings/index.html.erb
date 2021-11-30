@@ -1,8 +1,10 @@
-<h3>Event Bookings Page</h3>
-<%= @event.name %>
+<h1><%= @event.name %></h1>
+
+
+<h3>Guests Attending</h3>
 
 <% @bookings.each do |booking| %>
-<%= booking.user_id %>
-<%= booking.intention.name %>
-<%= booking.intention_description %>
+<h4>User: <%= booking.user_id %></h4>
+<h5>Intention: <%= booking.intention.name %></h5>
+<p>Description: <%= booking.intention_description %></p>
 <% end %>

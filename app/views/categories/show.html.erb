@@ -1,10 +1,10 @@
-<%= @category.name %>
+<h1><%= @category.name %></h1>
 
 <% @events.each do |event|  %>
 
-<%= link_to event.name, event_path(event) %>
-<%= event.date %>
-<%= event.time %>
-<%= event.description %>
+<p> Name:<%= link_to event.name, event_path(event) %></p>
+<p> Date:<%= event.date %></p>
+<p> Time:<%= event.time %></p>
+<p> Description:<%= event.description %></p>
 
 <% end  %>
