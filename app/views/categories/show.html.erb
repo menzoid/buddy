@@ -1,8 +1,10 @@
 <%= @category.name %>
 
 <% @events.each do |event|  %>
+
 <%= link_to event.name, event_path(event) %>
 <%= event.date %>
 <%= event.time %>
 <%= event.description %>
+
 <% end  %>
