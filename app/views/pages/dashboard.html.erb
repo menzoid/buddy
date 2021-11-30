@@ -15,13 +15,9 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="myevents" role="tabpanel" aria-labelledby="myevents-tab">
       <div class="mb-2 mt-4  p-5 info-section">
-        <h2>Fill here with bookings</h2>
-        <% @bookings.each do |booking|%>
-          <%= booking.event.name %>
-        <% end  %>
-        <h2>And then using the event</h2>
+        <h5>Useing the event variable in order to pass through to the event_bookings_path</h5>
         <% @events.each do |event|%>
-          <%= event.name %>
+          <p><%= link_to event.name,  event_bookings_path(event) %></p>
         <% end  %>
       </div>
     </div>
