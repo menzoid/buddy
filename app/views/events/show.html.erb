@@ -1,6 +1,6 @@
 <h2><%= @event.name %></h2>
-<%= @event.date %>
-<%= @event.time %>
-<%= @event.description %>
+<h4>Date: <%= @event.date %></h4>
+<p>Time: <%= @event.time %></p>
+<p>Description: <%= @event.description %></p>
 
 <%= link_to "Join Event", new_event_booking_path(@event), class: "btn btn-ghost" %>
