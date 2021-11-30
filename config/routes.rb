@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :events, only: %i[show index] do
     resources :bookings, only: [:new, :create, :index]
   end
+
+  get "profile", to: "pages#profile"
+  get "dashboard", to: "pages#dashboard"
 end
