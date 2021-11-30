@@ -1,0 +1,8 @@
+<h3>Event Bookings Page</h3>
+<%= @event.name %>
+
+<% @bookings.each do |booking| %>
+<%= booking.user_id %>
+<%= booking.intention.name %>
+<%= booking.intention_description %>
+<% end %>
