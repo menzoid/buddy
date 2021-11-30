@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :categories, only: :show
-  resources :events, only: %i[show index]
+  resources :events, only: %i[show index] do
+    resources :bookings, only: [:new, :create, :index]
+  end
 end

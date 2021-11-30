@@ -1,0 +1,10 @@
+<div>
+  <h3 class="mt-4">State your Intention</h3>
+  <div>
+    <%= simple_form_for [@event, @booking] do |f| %>
+      <%= f.association :intention %>
+      <%= f.input :intention_description %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
