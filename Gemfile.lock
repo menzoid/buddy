@@ -240,12 +240,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-<<<<<<< HEAD
-  x86_64-darwin-20
-  x86_64-linux
-=======
   ruby
->>>>>>> 6b5af721d2fc46d3b310b6ebede7a346adae1621
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
