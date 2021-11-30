@@ -1,6 +1,6 @@
-<h1>Title of some shit</h1>
 
-<div class="container">
+<div class="container-sm">
+    <h1>Title of some shit</h1>
     <h3> Top Events </h3>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -11,24 +11,24 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%=image_tag("rolling-stones.jpg", size:"500", class: "carrousel-pic") %>
+        <%=image_tag("rolling-stones.jpg", class: "carrousel-pic w-100") %>
          <div class="carousel-caption d-none d-md-block">
-            <h5><%= @event_category.events %></h5>
-            <p>...</p>
+            <h5><%=@featured_events[0].name%></h5>
+            <p><%=@featured_events[0].description%></p>
           </div>
       </div>
       <div class="carousel-item">
-        <%=image_tag("Qotsa.jpg", size:"500", class: "carrousel-pic") %>
+        <%=image_tag("Qotsa.jpg", class: "carrousel-pic w-100") %>
           <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
+            <h5><%=@featured_events[1].name%></h5>
+            <p><%=@featured_events[0].description%></p>
           </div>
       </div>
       <div class="carousel-item">
-        <%=image_tag("rolling-stones.jpg", size:"500", class: "carrousel-pic") %>
+        <%=image_tag("rolling-stones.jpg", class: "carrousel-pic w-100") %>
           <div class="carousel-caption d-none d-md-block">
-            <h5>...</h5>
-            <p>...</p>
+            <h5><%=@featured_events[2].name%></h5>
+            <p><%=@featured_events[0].description%></p>
           </div>
       </div>
     </div>
@@ -43,15 +43,15 @@
   </div>
 </div>
 
-<h1 class="categories-title mt-5">Categories</h1>
+<h1 class="categories-title mt-5 ">Categories</h1>
   <div class="category-main-div-game-index">
     <% @categories.each do |cat| %>
-      <div class="parent-category-layout-design-category-game-index">
-        <%= link_to category_path(category) do %>
-          <div class="category-layout-design-category-game-index">
-            <%= image_tag category.photo %>
-            <div class="child-category-layout-design-category-game-index">
-            <p><%= category.name %></p>
+      <div class="parent-category-layout-design-category-event-index">
+        <%= link_to category_path(cat) do %>
+          <div class="cards category-layout-design-category-event-index">
+              <%# <%= image_tag category.photo %>
+            <div class="child-category-layout-design-category-event-index">
+            <p><%= cat.name %></p>
             </div>
           </div>
         <% end %>
