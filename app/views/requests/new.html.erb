@@ -1,3 +1,7 @@
 <div>
   <h3 class="mt-4">State your Case</h3>
+  <%=simple_form_for [@booking,@request] do |f|  %>
+  <%=f.input :reason, hint: 'I love you'  %>
+  <%= f.submit "Send Request", class: "btn btn-primary" %>
+  <%end %>
 </div>
