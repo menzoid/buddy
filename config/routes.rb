@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: :show
   resources :events, only: %i[show index] do
-    resources :bookings, only: [:new, :create, :index]
+    resources :bookings, only: %i[new create index show]
   end
+  get "bookings/:id/requests/new", to: "requests#new", as: "request"
 end

@@ -4,7 +4,8 @@
 <h3>Guests Attending</h3>
 
 <% @bookings.each do |booking| %>
-<h4>User: <%= booking.user_id %></h4>
+<h4>User: <%=link_to "#{booking.user.username}", event_booking_path(@event,booking), method: :get %></h4>
 <h5>Intention: <%= booking.intention.name %></h5>
 <p>Description: <%= booking.intention_description %></p>
+<p>Booking id:<%= booking.id %></p>
 <% end %>
