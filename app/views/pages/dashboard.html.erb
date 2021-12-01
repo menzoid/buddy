@@ -6,7 +6,10 @@
       <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true">My Events</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="nudges-tab" data-toggle="tab" href="#nudges" role="tab" aria-controls="nudges" aria-selected="false">Nudges</a>
+      <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false">Nudge Requests</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link tab-underlined" id="nudgespending-tab" data-toggle="tab" href="#nudgespending" role="tab" aria-controls="nudgespending" aria-selected="false">Pending Nudges</a>
     </li>
     <li class="nav-item" role="presentation">
       <a class="nav-link tab-underlined" id="chatrooms-tab" data-toggle="tab" href="#chatrooms" role="tab" aria-controls="chatrooms" aria-selected="false">Chatrooms</a>
@@ -21,10 +24,21 @@
         <% end  %>
       </div>
     </div>
-    <div class="tab-pane fade" id="nudges" role="tabpanel" aria-labelledby="nudges-tab">
+    <div class="tab-pane fade" id="nudgesin" role="tabpanel" aria-labelledby="nudgesin-tab">
       <div class="mb-2 mt-4  p-5 info-section">
         <div>
-         <h2>Fill here with Nudges (both outward and inward, for now)</h2>
+         <% @notifications.each do |notification|  %>
+          <%= notification %>
+         <% end  %>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="nudgespending" role="tabpanel" aria-labelledby="nudgespending-tab">
+      <div class="mb-2 mt-4  p-5 info-section">
+        <div>
+         <% @requests.each do |request|  %>
+          <%= request %>
+         <% end  %>
         </div>
       </div>
     </div>
