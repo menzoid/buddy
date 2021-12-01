@@ -57,4 +57,19 @@
         <% end %>
       </div>
     <% end %>
-  </div>
+
+      <%= form_tag events_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an event"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+  <ul>
+    <% @pg_search_events.each do |pg_search_event| %>
+      <li><%= link_to pg_search_event.name, "../#{(pg_search_event.class).to_s.downcase!.pluralize}/#{pg_search_event.id}" %></li>
+    <% end %>
+  </ul>
+</div>
