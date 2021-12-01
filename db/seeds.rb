@@ -26,15 +26,16 @@ User.create(username: Faker::FunnyName.two_word_name, email: 'slave@games.com', 
 puts "users created"
 puts "creating categories"
 
-Category.create(name: 'Football')
-Category.create(name: 'Tennis')
-Category.create(name: 'Adventure')
+Category.create(name: 'Outdoors')
+Category.create(name: 'Sports')
 Category.create(name: 'Live Music')
-Category.create(name: 'Festival')
-Category.create(name: 'Food')
-Category.create(name: 'Road Trip')
-Category.create(name: 'Theatre')
-Category.create(name: 'Museum')
+Category.create(name: 'Dining')
+Category.create(name: 'Travel')
+Category.create(name: 'Art')
+Category.create(name: 'Gaming')
+Category.create(name: 'Partying')
+Category.create(name: 'Education')
+Category.create(name: 'Mindfulness')
 
 puts "categories created"
 puts "creating intentions"

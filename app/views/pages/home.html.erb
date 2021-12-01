@@ -4,29 +4,34 @@
 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 
 <div class="cards">
+  <div class="card-category" style="background-image: url(<%= asset_path 'live-music.png' %>)">
+    <div class="cat-title">Live Music</div>
+  </div>
   <div class="card-category" style="background-image: url(<%= asset_path 'outdoors.png' %>)">
     <div class="cat-title">Outdoors</div>
   </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Dining
+  <div class="card-category" style="background-image: url(<%= asset_path 'Dining.png' %>)">
+    <div class="cat-title">Dining</div>
   </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Dining
+  <div class="card-category" style="background-image: url(<%= asset_path 'Road-trip.png' %>)">
+    <div class="cat-title">Travel</div>
   </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Dining
+  <div class="card-category" style="background-image: url(<%= asset_path 'Mindfulness.png' %>)">
+    <div class="cat-title">Mindfulness</div>
   </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Dining
+  <div class="card-category" style="background-image: url(<%= asset_path 'Gaming.png' %>)">
+    <div class="cat-title">Gaming</div>
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Dining
+  <div class="card-category" style="background-image: url(<%= asset_path 'Sports.png' %>)">
+    <div class="cat-title">Sports</div>
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Dining
+  <div class="card-category" style="background-image: url(<%= asset_path 'Museum.png' %>)">
+    <div class="cat-title">Art</div>
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Dining
+  <div class="card-category" style="background-image: url(<%= asset_path 'Partying.png' %>)">
+    <div class="cat-title">Partying</div>
+  </div>
+  <div class="card-category" style="background-image: url(<%= asset_path 'Education.png' %>)">
+    <div class="cat-title">Education</div>
   </div>
 </div>
