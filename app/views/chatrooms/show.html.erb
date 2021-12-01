@@ -1,0 +1,5 @@
+<h2><%= @chatroom.name %></h2>
+
+<% @chatroom.users.each do |user|  %>
+<p><%= user.id %></p>
+<% end %>
