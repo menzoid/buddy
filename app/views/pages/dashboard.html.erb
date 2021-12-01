@@ -1,6 +1,6 @@
 <div class="mt-5"></div>
   <div class="container mt-5">
-  <h1 class="mt-4 mb-4">DASHBOARD</h1>
+  <h1 class="mt-4 mb-4">DASHBOARD of <%= current_user.username %></h1>
   <ul class="nav nav-tabs list-inline tabs-underlined mb-3" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true">My Events</a>
@@ -20,7 +20,15 @@
       <div class="mb-2 mt-4  p-5 info-section">
         <h5>Useing the event variable in order to pass through to the event_bookings_path</h5>
         <% @events.each do |event|%>
-          <p><%= link_to event.name,  event_bookings_path(event) %></p>
+          <div class="card-event mb-2">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-event-infos">
+              <h2><%= link_to event.name,  event_bookings_path(event) %></h2>
+              <p><%= event.description %> on <strong> <%= event.date %></strong></p>
+            </div>
+          </div>
+
+
         <% end  %>
       </div>
     </div>
@@ -28,7 +36,18 @@
       <div class="mb-2 mt-4  p-5 info-section">
         <div>
          <% @notifications.each do |notification|  %>
-          <%= notification %>
+          <div class="notification">
+            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+            <div class="notification-content">
+              <p><small><%= notification.requester.user.username %> wants to go to <%= notification.requester.event.name %> on <%= notification.requester.event.date %></small></p>
+              <p><strong><%= notification.requester.intention.name %> ></strong> <%= notification.requester.intention_description %> | Reason: <%= notification.reason %></p>
+            </div>
+
+            <div class="notification-actions">
+              <a href="#">Accept <i class="fas fa-pencil-alt"></i></a>
+              <a href="#">Reject <i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
          <% end  %>
         </div>
       </div>
@@ -37,7 +56,18 @@
       <div class="mb-2 mt-4  p-5 info-section">
         <div>
          <% @requests.each do |request|  %>
-          <%= request %>
+          <div class="notification">
+            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+            <div class="notification-content">
+              <p><small>I have asked <%= request.requestee.user.username %> to go to <%= request.requestee.event.name %> on <%= request.requester.event.date %></small></p>
+              <p><strong><%= request.requestee.intention.name %> ></strong> <%= request.requestee.intention_description %> | Reason: <%= request.reason %></p>
+            </div>
+
+            <div class="notification-actions">
+              <a href="#"> <%= request.status %> <i class="fas fa-pencil-alt"></i></a>
+              <a href="#">Delete Request <i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
          <% end  %>
         </div>
       </div>
