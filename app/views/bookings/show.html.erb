@@ -1,0 +1,6 @@
+<p><%=@buddy.username  %> </p>
+<p><%=@booking.intention.name %> </p>
+<p><%=@booking.intention_description %> </p>
+
+
+<%= link_to "Send Request", request_path(@booking), class: 'button' %>

@@ -19,6 +19,12 @@ class BookingsController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
     @bookings = @event.bookings
+
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    @buddy = @booking.user
   end
 
   private

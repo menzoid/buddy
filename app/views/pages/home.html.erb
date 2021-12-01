@@ -1,5 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) url(assets/images/outdoors.png)">
     Outdoors
@@ -9,3 +12,4 @@
     Dining
   </div>
 </div>
+
