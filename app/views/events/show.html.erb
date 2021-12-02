@@ -1,13 +1,20 @@
+<div class="container">
+    <div class="row" style="
+        width:100%;height:150px;background-color:grey;margin-left:3px">
+      <h2><%= @event.name %></h2>
+      <h4>Date: <%= @event.date.to_s %></h4>
+      <p>Time: <%= @event.time.to_s %></p>
+    </div>
+</div>
 
-<h2><%= @event.name %></h2>
-<h4>Date: <%= @event.date %></h4>
-<p>Time: <%= @event.time %></p>
+</div>
+<div>
 <p>Description: <%= @event.description %></p>
-
+</div>
 <%= link_to "Join Event", new_event_booking_path(@event), class: "btn btn-ghost" %>
 
 <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 100%; height: 300px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
