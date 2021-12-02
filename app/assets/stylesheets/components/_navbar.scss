@@ -1,4 +1,4 @@
-.navbar-lewagon {
+.navbar-buddy {
   position: fixed;
   bottom: 0;
   justify-content: space-around;
@@ -13,4 +13,17 @@
   font-size: 1.2em;
   text-shadow: 1px 2px 3px #b17e3f;
   transition: color .15s ease-in;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }

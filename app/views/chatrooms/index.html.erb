@@ -1,0 +1,8 @@
+<div class="container">
+<h1>Current Chats</h1>
+<% @chatrooms.each do |chatroom| %>
+  <h4><%= link_to chatroom.name, chatroom_path(chatroom) %></h4>
+  <p><%= chatroom.event.name %></p>
+  <p><%= chatroom.users[0].username %> and <%= chatroom.users[1].username %></p>
+<% end %>
+</div>
