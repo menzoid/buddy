@@ -32,6 +32,7 @@ gem 'devise'
 gem 'pundit'
 gem 'faker'
 gem 'pg_search'
+gem 'geocoder'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

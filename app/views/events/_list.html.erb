@@ -1,14 +1,16 @@
-<div data-refresh-list-target="list">
+<div class= "xoxota" data-refresh-list-target="list">
   <% if params[:query].present? %>
     <h1 class="h3"><%= pluralize events.count, 'result' %> for <code><%= params[:query] %></code></h1>
 
-  <div class="events">
-    <% events.each do |event| %>
-      <div class="event-card">
-        <%= event.name %>
-        <h2><%= event.description %> <small>(<%= event.category.name %>)</small></h2>
-      </div>
-    <% end %>
-    <% end %>
+    <div class="events">
+      <% events.each do |event| %>
+        <div class="card-event mb-2">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-event-infos">
+            <h2><%= link_to event.name,  event_bookings_path(event) %></h2>
+            <p><strong> <%= event.date %></strong></p>
+        </div>
+      <% end %>
+  <% end %>
   </div>
 </div>
