@@ -1,7 +1,26 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+
+<fieldset class="form-group check_boxes optional snippet_intentions">
+  <legend class="col-form-label pt-0">Intentions</legend>
+  <input type="hidden" name="snippet[intention_ids][]" value="">
+  <div class="intention-item">
+    <input class="form-check-input check_boxes optional intention-selector" type="checkbox" value="1" name="snippet[intention_ids][]" id="snippet_intention_ids_1">
+    <label class="form-check-label collection_check_boxes" for="snippet_intention_ids_1">Experience</label>
+    <input class="form-check-input check_boxes optional intention-selector" type="checkbox" value="2" name="snippet[intention_ids][]" id="snippet_intention_ids_2">
+    <label class="form-check-label collection_check_boxes" for="snippet_intention_ids_2">Party</label>
+    <input class="form-check-input check_boxes optional intention-selector" type="checkbox" value="3" name="snippet[intention_ids][]" id="snippet_intention_ids_3">
+    <label class="form-check-label collection_check_boxes" for="snippet_intention_ids_3">Meet People</label>
+    <input class="form-check-input check_boxes optional intention-selector" type="checkbox" value="4" name="snippet[intention_ids][]" id="snippet_intention_ids_4">
+    <label class="form-check-label collection_check_boxes" for="snippet_intention_ids_4">Listen to Music</label>
+    <input class="form-check-input check_boxes optional intention-selector" type="checkbox" value="5" name="snippet[intention_ids][]" id="snippet_intention_ids_5">
+    <label class="form-check-label collection_check_boxes" for="snippet_intention_ids_5">Explore</label>
+    <input class="form-check-input check_boxes optional intention-selector" type="checkbox" value="6" name="snippet[intention_ids][]" id="snippet_intention_ids_6">
+    <label class="form-check-label collection_check_boxes" for="snippet_intention_ids_6">Dating</label>
+  </div>
+</fieldset>
 
 <div class="cards">
   <div class="card-category" style="background-image: url(<%= asset_path 'live-music.png' %>)">
