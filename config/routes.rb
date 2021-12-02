@@ -10,9 +10,20 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[show] do
     resources :requests, only: %i[new create]
   end
+
+  resources :requests, only: [] do
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
+
+  resources :chatrooms, only: %i[index show] do
+    resources :messages, only: :create
+  end
+
   get "profile", to: "pages#profile"
   get "dashboard", to: "pages#dashboard"
 
   resources :search_by_name, only: [:index]
-
 end
