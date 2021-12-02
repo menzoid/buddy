@@ -42,7 +42,7 @@ class RequestsController < ApplicationController
     redirect_to dashboard_path
   end
 
-
+  private
 
   def request_params
     params.require(:request).permit(:reason, :resquester_id, :requestee_id)
