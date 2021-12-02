@@ -1,0 +1,14 @@
+<div data-refresh-list-target="list">
+  <% if params[:query].present? %>
+    <h1 class="h3"><%= pluralize events.count, 'result' %> for <code><%= params[:query] %></code></h1>
+
+  <div class="events">
+    <% events.each do |event| %>
+      <div class="event-card">
+        <%= event.name %>
+        <h2><%= event.description %> <small>(<%= event.category.name %>)</small></h2>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

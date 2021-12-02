@@ -57,19 +57,18 @@
         <% end %>
       </div>
     <% end %>
-
-      <%= form_tag events_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an event"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-
-  <ul>
-    <% @pg_search_events.each do |pg_search_event| %>
-      <li><%= link_to pg_search_event.name, "../#{(pg_search_event.class).to_s.downcase!.pluralize}/#{pg_search_event.id}" %></li>
-    <% end %>
-  </ul>
+    <div data-controller="refresh-list">
+        <%= form_with url: events_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                           class: "form-control",
+                           placeholder: 'Type a movie title',
+                           value: params[:query],
+                           data: {
+                            refresh_list_target: 'searchInput',
+                            action: "keyup->refresh-list#update"
+                          } %>
+        <% end %>
+       <%= render 'list', events: @pg_search_events %>
+    </div>
+  </div>
 </div>
