@@ -1,38 +1,41 @@
 <div class="mt-5"></div>
   <div class="container mt-5">
   <h1 class="mt-4 mb-4">DASHBOARD of <%= current_user.username %></h1>
-  <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-flat" %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-flat" %>
+
+<%# ----- these create the tabs (adapt for mobile)  ------- %>
+
   <ul class="nav nav-tabs list-inline tabs-underlined mb-3" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true">My Events</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false">notifications</a>
+      <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false">Notifications</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="nudgespending-tab" data-toggle="tab" href="#nudgespending" role="tab" aria-controls="nudgespending" aria-selected="false">Pending requests</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="chatrooms-tab" data-toggle="tab" href="#chatrooms" role="tab" aria-controls="chatrooms" aria-selected="false">Chatrooms</a>
+      <a class="nav-link tab-underlined" id="nudgespending-tab" data-toggle="tab" href="#nudgespending" role="tab" aria-controls="nudgespending" aria-selected="false">Pending</a>
     </li>
   </ul>
+
+  <%#---     this is the tabbed content  -----%>
+
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="myevents" role="tabpanel" aria-labelledby="myevents-tab">
-      <div class="mb-2 mt-4  p-5 info-section">
-        <h5>Useing the event variable in order to pass through to the event_bookings_path</h5>
+      <div class="mb-2 mt-4 info-section">
         <% @events.each do |event|%>
           <div class="card-event mb-2">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-event-infos">
               <h2><%= link_to event.name,  event_bookings_path(event) %></h2>
-              <p><%= event.description %> on <strong> <%= event.date %></strong></p>
+              <p><strong> <%= event.date %></strong></p>
             </div>
           </div>
         <% end  %>
       </div>
     </div>
     <div class="tab-pane fade" id="nudgesin" role="tabpanel" aria-labelledby="nudgesin-tab">
-      <div class="mb-2 mt-4  p-5 info-section">
+      <div class="mb-2 mt-4 info-section">
         <div>
          <% @notifications.each do |notification|  %>
           <div class="notification">
@@ -52,7 +55,7 @@
       </div>
     </div>
     <div class="tab-pane fade" id="nudgespending" role="tabpanel" aria-labelledby="nudgespending-tab">
-      <div class="mb-2 mt-4  p-5 info-section">
+      <div class="mb-2 mt-4 info-section">
         <div>
          <% @requests.each do |request|  %>
           <div class="notification">
@@ -68,13 +71,6 @@
             </div>
           </div>
          <% end  %>
-        </div>
-      </div>
-    </div>
-    <div class="tab-pane fade" id="chatrooms" role="tabpanel" aria-labelledby="chatrooms-tab">
-      <div class="mb-2 mt-4  p-5 info-section">
-        <div>
-         <h2>Fill here with the users chatrooms when relevant</h2>
         </div>
       </div>
     </div>

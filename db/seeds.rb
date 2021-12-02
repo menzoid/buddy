@@ -48,7 +48,7 @@ Intention.create(name: 'Explore')
 Intention.create(name: 'Exercise')
 Intention.create(name: 'Adventure')
 Intention.create(name: 'Cultural')
-Intention.create(name: 'Find Love')
+Intention.create(name: 'Dating')
 
 puts "intentions created"
 puts "creating events"
