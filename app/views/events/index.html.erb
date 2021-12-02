@@ -3,17 +3,20 @@
     <h1>Title of some shit</h1>
     <h3> Top Events </h3>
     <div class= "input-container" data-controller="refresh-list">
-      <%= form_with url: events_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
-        <%= f.text_field :query,
-                          class: "form-control",
-                          placeholder: 'Type an event',
-                          value: params[:query],
-                          data: {
-                          refresh_list_target: 'searchInput',
-                          action: "keyup->refresh-list#update"
-                        } %>
-      <% end %>
-
+    <div class="row justify-content-center">
+      <div class="search-bar col-6">
+        <%= form_with url: events_path, method: :get, style:"width:100%", html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                            class: "form-control",
+                            placeholder: 'Type an event',
+                            value: params[:query],
+                            data: {
+                            refresh_list_target: 'searchInput',
+                            action: "keyup->refresh-list#update"
+                          } %>
+        <% end %>
+        </div>
+      </div>
       <%= render 'list', events: @pg_search_events %>
     </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
