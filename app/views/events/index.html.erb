@@ -43,20 +43,24 @@
   </div>
 </div>
 
+<%# Categories cards section %>
+
 <h1 class="categories-title mt-5 ">Categories</h1>
-  <div class="category-main-div-game-index">
-    <% @categories.each do |cat| %>
-      <div class="parent-category-layout-design-category-event-index">
-        <%= link_to category_path(cat) do %>
-          <div class="cards category-layout-design-category-event-index">
-              <%# <%= image_tag category.photo %>
-            <div class="child-category-layout-design-category-event-index">
-            <p><%= cat.name %></p>
-            </div>
-          </div>
-        <% end %>
+<div class="cards mr-4 ml-4">
+  <% @categories.each do |category| %>
+    <%= link_to category_path(category) do %>
+      <div class="card-category">
+        <div class="category-photo">
+          <%= image_tag 'live-music.png' %>
+        </div>
+        <div class="category-title">
+        <p><%= category.name %></p>
+        </div>
       </div>
     <% end %>
+  <% end %>
+</div>
+
     <div data-controller="refresh-list">
         <%= form_with url: events_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
           <%= f.text_field :query,
@@ -70,5 +74,3 @@
         <% end %>
        <%= render 'list', events: @pg_search_events %>
     </div>
-  </div>
-</div>
