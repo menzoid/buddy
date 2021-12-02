@@ -1,6 +1,7 @@
 .tabs-underlined {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .tabs-underlined .tab-underlined {
@@ -10,10 +11,23 @@
   opacity: .4;
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 4px solid transparent;
 }
 
 .tabs-underlined .tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid $gray;
+  opacity: 0.9;
+  color: $blue;
+  border-radius: 15px;
+  background: none;
+  transition: background 0.3s ease;
+  border: 1px solid $blue;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs .nav-link{
+  font-size: 15px;
+  border: none;
+
 }

@@ -1,11 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-buddy">
-  <%= link_to dashboard_path, class: "navbar-brand" do %>
+<div class="navbar fixed-bottom navbar-expand navbar-light navbar-buddy">
+  <%= link_to dashboard_path do %>
     <i class="navbar-icon fas fa-user"></i>
   <% end %>
-  <%= link_to events_path, class: "navbar-brand" do %>
-    <i class="navbar-icon fas fa-home"></i>
+  <%= link_to events_path do %>
+    <i class="navbar-icon fas fa-angle-double-up"></i>
   <% end %>
-  <%= link_to chatrooms_path, class: "navbar-brand" do %>
-    <i class="navbar-icon far fa-comment"></i>
+  <%= link_to chatrooms_path do %>
+    <i class="navbar-icon fas fa-comments"></i>
   <% end %>
 </div>
