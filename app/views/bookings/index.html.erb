@@ -1,6 +1,6 @@
 <div class="container">
-  <h1><%= @event.name %></h1>
-  <h3>Guests Attending</h3>
+  <h4><%= @event.name %></h4>
+  <h5 class="mt-5">Guests Attending</h5>
 
   <% @bookings.each do |booking|  %>
     <%= link_to booking_path(booking), method: :get do %>
@@ -8,7 +8,7 @@
         <%= image_tag booking.user.photo, class: 'avatar-large' %>
         <div class="notification-content">
           <p><small>Intention: <%= booking.intention.name %></small></p>
-          <p><strong><%=link_to "#{booking.user.username}", booking_path(booking), method: :get %></strong></p>
+          <p><strong><%= booking.user.username %></strong></p>
         </div>
 
         <div class="notification-actions">

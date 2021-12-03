@@ -1,6 +1,18 @@
-<p><%=@buddy.username  %> </p>
-<p><%=@booking.intention.name %> </p>
-<p><%=@booking.intention_description %> </p>
+<div class="container">
+  <div class="buddy-profile text-center">
+    <%= image_tag @buddy.photo %>
+    <h4 class="mt-2"><%=@buddy.username  %> </h4>
+  </div>
+  <div class="intention-info mt-4">
+    <h5>Their intention</h5>
+    <p>Type: <%=@booking.intention.name %> </p>
+    <p><%=@booking.intention_description %> </p>
+  </div>
+  <div class="buddy-info">
+    <h5>About them</h5>
+    <p><%= @buddy.bio %></p>
+  </div>
 
 
-<%= link_to "Send Request", new_booking_request_path(@booking), class: 'button' %>
+  <%= link_to "Send Request", new_booking_request_path(@booking), class: 'btn btn-create' %>
+</div>
