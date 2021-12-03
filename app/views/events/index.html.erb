@@ -2,7 +2,24 @@
 <div class="container-sm">
     <h1>Title of some shit</h1>
     <h3> Top Events </h3>
-
+    <div class= "input-container" data-controller="refresh-list">
+    <div class="row justify-content-center">
+      <div class="search-bar col-6">
+        <%= form_with url: events_path, method: :get, style:"width:100%", html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                            class: "form-control",
+                            placeholder: 'Type an event',
+                            value: params[:query],
+                            data: {
+                            refresh_list_target: 'searchInput',
+                            action: "keyup->refresh-list#update"
+                          } %>
+        <% end %>
+        </div>
+      </div>
+      <%= render 'list', events: @pg_search_events %>
+  </div>
+  
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -43,32 +60,27 @@
   </div>
 </div>
 
+<%# Categories cards section %>
+
 <h1 class="categories-title mt-5 ">Categories</h1>
-  <div class="category-main-div-game-index">
-    <% @categories.each do |cat| %>
-      <div class="parent-category-layout-design-category-event-index">
-        <%= link_to category_path(cat) do %>
-          <div class="cards category-layout-design-category-event-index">
-              <%# <%= image_tag category.photo %>
-            <div class="child-category-layout-design-category-event-index">
-            <p><%= cat.name %></p>
-            </div>
-          </div>
-        <% end %>
+<div class="cards mr-4 ml-4">
+  <% @categories.each do |category| %>
+    <%= link_to category_path(category) do %>
+      <div class="card-category">
+        <div class="category-photo">
+          <%= image_tag 'live-music.png' %>
+        </div>
+        <div class="category-title">
+        <p><%= category.name %></p>
+        </div>
       </div>
     <% end %>
-    <div data-controller="refresh-list">
-        <%= form_with url: events_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
-          <%= f.text_field :query,
-                           class: "form-control",
-                           placeholder: 'Type a movie title',
-                           value: params[:query],
-                           data: {
-                            refresh_list_target: 'searchInput',
-                            action: "keyup->refresh-list#update"
-                          } %>
-        <% end %>
-       <%= render 'list', events: @pg_search_events %>
-    </div>
-  </div>
+  <% end %>
 </div>
+
+    
+  </div>
+  </div>
+
+</div>
+

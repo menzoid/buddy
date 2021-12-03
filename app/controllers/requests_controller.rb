@@ -8,9 +8,9 @@ class RequestsController < ApplicationController
   def create
     @booking = Booking.find(params[:booking_id])
     @request = Request.new(request_params)
-    @request.requester_id = current_user.id
-    @request.requestee_id = @booking.user.id
-    if @request.save
+    @request.requester = current_user.bookings.find_by(event: @booking.event)
+    @request.requestee = @booking
+    if @request.save!
       redirect_to event_bookings_path(@booking.event)
     else
       render :new
@@ -21,13 +21,13 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.accepted!
 
-    @requestee_id = @request.requestee_id
-    @requester_id = @request.requester_id
+    @requestee_id = @request.requestee.user.id
+    @requester_id = @request.requester.user.id
 
     @event = @request.requester.event
 
     @chatroom = Chatroom.create(name: "empty", event: @event)
-    @chatroom.name = "Chatroom for #{@event.name} id##{@chatroom.id}"
+    @chatroom.name = "Room 4 #{@event.name}"
     @chatroom.save
     @chatroom.users << User.find(@requestee_id)
     @chatroom.users << User.find(@requester_id)

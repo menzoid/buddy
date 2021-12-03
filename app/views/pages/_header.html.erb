@@ -1,0 +1,22 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div>
+    <h4>DASHBOARD</h4>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%# <div class="navbar-nav mr-auto">
+      <div class="nav-item dropdown"> %>
+        <%= image_tag "https://mpng.subpng.com/20180703/ya/kisspng-computer-icons-user-avatar-user-5b3bafe2381423.1933594815306383062297.jpg", class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      <%# </div>
+    </div> %>
+  </div>
+</div>

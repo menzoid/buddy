@@ -1,19 +1,37 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 12px;
+  grid-gap: 22px;
 }
 .card-category {
-  background-size: 75%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: white;
-  height: 120px;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  background-color: white;
 }
+
+.category-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 6px;
+  padding-bottom: 0px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.category-title {
+  text-align: center;
+  margin: 0px;
+
+  p {
+    margin: 0px;
+  }
+
+  p:hover {
+    text-decoration: none;
+  }
+}
+
 .cat-title {
   display: flex;
   justify-content: center;
