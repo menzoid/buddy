@@ -1,7 +1,13 @@
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.username %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
+
+  <div class="message-container" id="message-<%= message.id %>">
+    <div class="notification mb-2">
+      <%= image_tag message.user.photo, class: 'avatar-large' %>
+      <div class="notification-content">
+        <p><small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></p>
+        <p><%= message.content %></p>
+      </div>
+
+      <div class="notification-actions">
+      </div>
     </div>
+  </div>

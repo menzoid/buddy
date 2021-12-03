@@ -3,7 +3,7 @@
 
   <% @chatrooms.each do |chatroom|  %>
   <div class="notification mb-2">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+    <%= image_tag chatroom.users[0].photo, class: 'avatar-large' %>
     <div class="notification-content">
       <p><%= link_to chatroom.name, chatroom_path(chatroom) %></p>
       <p><small>between <%= chatroom.users[0].username %> and <%= chatroom.users[1].username %></small></p>
