@@ -1,6 +1,8 @@
 #map{
-  height:320px;
+  height:330px;
   object-fit: cover;
   width:100%;
-  heigth:100%;
+}
+.mapboxgl-canvas{
+  width:100%!important;
 }
