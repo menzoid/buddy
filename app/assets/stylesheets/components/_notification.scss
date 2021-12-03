@@ -26,6 +26,7 @@
 .notification .notification-actions {
   opacity: 0;
   display: flex;
+  flex-direction: column;
   transition: ease .3s;
 }
 
@@ -41,4 +42,10 @@
 
 .notification .notification-actions a:hover {
   color: #555555;
+}
+
+.reason-comment {
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
 }

@@ -1,26 +1,24 @@
 <div class="container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2></h2>
+
+  <div class="dash-head mt-2 mb-3 d-flex justify-content-between align-items-center">
+    <h4 class= "m-0">Edit <%= resource_name.to_s.humanize %></h4>
+    <div class="dropdown">
+      <%= image_tag "https://mpng.subpng.com/20180703/ya/kisspng-computer-icons-user-avatar-user-5b3bafe2381423.1933594815306383062297.jpg", class: "avatar dropdown-toggle", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </div>
+  </div>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
-
-    <div class="form-inputs">
       <%= f.input :username, required: true, autofocus: true %>
 
     <div class="form-inputs">
-      <%= f.input :first_name, required: true, autofocus: true %>
-
-    <div class="form-inputs">
-      <%= f.input :last_name, required: true, autofocus: true %>
-
-    <div class="form-inputs">
-      <%= f.input :bio, required: true, autofocus: true %>
-
-    <div class="form-inputs">
-      <%= f.input :phone_number, required: true, autofocus: true %>
+      <%= f.input :email, required: true, autofocus: true %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -39,14 +37,28 @@
                   input_html: { autocomplete: "current-password" } %>
     </div>
 
+    <h4>Please enrich your profile</h4>
+
+    <div class="form-inputs">
+      <%= f.input :first_name, required: true, autofocus: true %>
+
+    <div class="form-inputs">
+      <%= f.input :last_name, required: true, autofocus: true %>
+
+    <div class="form-inputs">
+      <%= f.input :bio, required: true, autofocus: true %>
+
+    <div class="form-inputs">
+      <%= f.input :phone_number, required: true, autofocus: true %>
+
     <div class="form-actions">
-      <%= f.button :submit, "Update" %>
+      <%= f.button :submit, "Update", class: "btn btn-create" %>
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-  <%= link_to "Back", :back %>
+  <div class="cancel-section">
+    <h3 class= "mt-4">Cancel my account</h3>
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <%= link_to "Back", :back %>
+  </div>
 </div>
