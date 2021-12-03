@@ -27,7 +27,7 @@ class RequestsController < ApplicationController
     @event = @request.requester.event
 
     @chatroom = Chatroom.create(name: "empty", event: @event)
-    @chatroom.name = "Chatroom for #{@event.name} id##{@chatroom.id}"
+    @chatroom.name = "Room 4 #{@event.name}"
     @chatroom.save
     @chatroom.users << User.find(@requestee_id)
     @chatroom.users << User.find(@requester_id)
