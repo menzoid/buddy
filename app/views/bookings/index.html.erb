@@ -3,17 +3,17 @@
   <h3>Guests Attending</h3>
 
   <% @bookings.each do |booking|  %>
-  <div class="notification">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-    <div class="notification-content">
-      <p><small>Intention: <%= booking.intention.name %>, <%= booking.intention_description %></small></p>
-      <p><strong><%=link_to "#{booking.user.username}", booking_path(booking), method: :get %></strong> id:<%= booking.id %></p>
-    </div>
+    <%= link_to booking_path(booking), method: :get do %>
+      <div class="notification mb-2">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+        <div class="notification-content">
+          <p><small>Intention: <%= booking.intention.name %></small></p>
+          <p><strong><%=link_to "#{booking.user.username}", booking_path(booking), method: :get %></strong></p>
+        </div>
 
-    <div class="notification-actions">
-      <a href="#"> <%= link_to "Accept" %> <i class="fas fa-pencil-alt"></i></a>
-      <a href="#"><%= link_to "Reject" %><i class="far fa-trash-alt"></i></a>
-    </div>
-  </div>
+        <div class="notification-actions">
+        </div>
+      </div>
+    <% end %>
   <% end  %>
 </div>
