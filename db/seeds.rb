@@ -9,6 +9,7 @@ require "open-uri"
 require 'faker'
 
 puts "destroying users, intentions, events, categories"
+
 Booking.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -74,12 +75,7 @@ event_description = ["We'll bring our two or three nets to play volleyball at ca
                      "Improv drops you into that wondrous world of high-energy, immediate, person-to-person interaction.",
                      "Discover Lisbon while meeting new people in town and exploring a unique street art walk lead by riddles & tips"]
 
-puts "creating users"
-User.create!(username: Faker::FunnyName.two_word_name, email: 'master@games.com', password: '123456')
-User.create!(username: Faker::FunnyName.two_word_name, email: 'zemanel@games.com', password: '123456')
-User.create!(username: Faker::FunnyName.two_word_name, email: 'slave@games.com', password: '123456')
 
-puts "users created"
 puts "creating categories"
 
 categories = [
@@ -127,6 +123,8 @@ event_names.each_with_index do |event_name, index|
 end
 puts "events created"
 
+i = 0
+
 20.times do
   user = User.new(
     username: Faker::Internet.username,
@@ -137,9 +135,10 @@ puts "events created"
     phone_number: '912345678',
     bio: Faker::Quote.jack_handey
   )
-  file = URI.open(user_avatars[0])
+  file = URI.open(user_avatars[i])
   user.photo.attach(io: file, filename: "#{user}.png", content_type: 'image/png')
   user.save!
+  i += 1
   puts "users created"
 end
 
