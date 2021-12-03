@@ -1,7 +1,20 @@
-.row{
-    background-position: center;
-    height:150px;
-    width: 100%;
-    border: 2px dashed #333;
-    opacity: 30%;
+
+
+.event-img{
+  width:100%;
+}
+
+.event-pic{
+  object-fit: cover;
+  width:100%;
+}
+
+.Join {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 5px;
+}
+
+.event-info {
+  margin-bottom: 20px;
 }
