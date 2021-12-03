@@ -11,6 +11,19 @@
   color: $yellow;
 }
 
+.btn-signin {
+  color: $yellow;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $orange;
+  transition: background 0.3s ease;
+}
+
+.btn-signin:hover {
+  background: $orange;
+  color: $yellow;
+}
+
 .btn-create {
   color: $yellow;
   padding: 8px 24px;

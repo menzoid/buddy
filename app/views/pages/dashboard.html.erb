@@ -32,23 +32,25 @@
     <div class="tab-pane fade show active" id="myevents" role="tabpanel" aria-labelledby="myevents-tab">
       <div class="mb-2 mt-4 info-section">
         <% @events.each do |event|%>
-          <div class="card-event mb-2">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%= link_to event_bookings_path(event) do %>
+          <div class="card-event mb-1">
+            <%= image_tag event.photo %>
             <div class="card-event-infos">
-              <h2><%= link_to event.name,  event_bookings_path(event) %></h2>
+              <h2><%= event.name%></h2>
               <p><strong> <%= event.date %></strong></p>
               <p class= "float-right"><i class="fas fa-map-marker-alt"></i> <%= event.address %></p>
             </div>
           </div>
-        <% end  %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="tab-pane fade" id="nudgesin" role="tabpanel" aria-labelledby="nudgesin-tab">
       <div class="mb-2 mt-4 info-section">
         <div>
          <% @notifications.each do |notification|  %>
-          <div class="notification">
-            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification mb-2">
+            <%= image_tag notification.requester.user.photo, class: 'avatar-large' %>
             <div class="notification-content">
               <p><small> Request from <%= notification.requester.user.username %> for <strong><%= notification.requester.event.name %></strong> on <strong><%= notification.requester.event.date %><strong></small></p>
               <p class= "reason-comment mt-1">"<%= notification.reason %>"</p>
@@ -71,11 +73,11 @@
       <div class="mb-2 mt-4 info-section">
         <div>
          <% @requests.each do |request|  %>
-          <div class="notification">
-            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification mb-2">
+            <%= image_tag request.requestee.user.photo, class: 'avatar-large' %>
             <div class="notification-content">
-              <p><small>Sent to <%= request.requestee.user.username %> for</small> <%= request.requestee.event.name %> <</p>
-              <p class= "reason-comment mt-1">"<%= notification.reason %>"</p>
+              <p><small>Sent to <%= request.requestee.user.username %> for <%= request.requestee.event.name %></small> </p>
+              <p class= "reason-comment mt-1">"<%= request.reason %>"</p>
             </div>
           </div>
          <% end  %>

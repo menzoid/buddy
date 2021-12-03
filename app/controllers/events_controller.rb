@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     @featured_events = Event.all.sample(5)
     @events = Event.all
     @categories = Category.all
+    @user = current_user
 
     if params[:query].present?
       @pg_search_events = Event.search_by_name(params[:query])

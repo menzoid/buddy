@@ -1,10 +1,20 @@
-<h1><%= @category.name %></h1>
 
-<% @events.each do |event|  %>
+<div class="container">
+  <h3><%= @category.name %></h3>
 
-<p> Name:<%= link_to event.name, event_path(event) %></p>
-<p> Date:<%= event.date %></p>
-<p> Time:<%= event.time %></p>
-<p> Description:<%= event.description %></p>
-
-<% end  %>
+  <% @events.each do |event|  %>
+    <%= link_to event_path(event) do %>
+    <div class="card-event-show mb-2">
+      <%= image_tag event.photo %>
+      <div class="card-event-show-infos">
+        <div>
+          <h2><%= event.name %></h2>
+          <p>Taking place on <%= event.date %> at <%= event.time %></p>
+        </div>
+        <%# <h2 class="card-event-show-pricing"><%= event.date %></h2>
+        <%# <%= image_tag event.category.photo, class: "card-event-show-user" %>
+      </div>
+    </div>
+    <% end %>
+  <% end  %>
+</div>
