@@ -50,13 +50,17 @@
           <div class="notification">
             <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
             <div class="notification-content">
-              <p><small> Request from <%= notification.requester.user.username %> for <%= notification.requester.event.name %> on <%= notification.requester.event.date %></small></p>
-              <p><em>"<%= notification.reason %>"</em></p>
+              <p><small> Request from <%= notification.requester.user.username %> for <strong><%= notification.requester.event.name %></strong> on <strong><%= notification.requester.event.date %><strong></small></p>
+              <p class= "reason-comment mt-1">"<%= notification.reason %>"</p>
             </div>
 
-            <div class="notification-actions">
-              <a href="#"> <%= link_to "Accept", accept_request_url(notification), method: :patch %> <i class="fas fa-pencil-alt"></i></a>
-              <a href="#"><%= link_to "Reject", reject_request_path(notification), method: :patch %><i class="far fa-trash-alt"></i></a>
+            <div class="notification-actions mr-4">
+              <%= link_to accept_request_url(notification), method: :patch do %>
+                <i class="fas fa-check-circle text-success"></i>
+              <% end %>
+              <%= link_to reject_request_path(notification), method: :patch do %>
+                <i class="fas fa-times-circle text-danger"></i>
+              <% end %>
             </div>
           </div>
          <% end  %>
@@ -70,11 +74,8 @@
           <div class="notification">
             <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
             <div class="notification-content">
-              <p><strong><%= request.requestee.user.username %></strong> > <%= request.requestee.intention.name %> <</p>
-              <p><small><%= request.requestee.event.name %> on <%= request.requester.event.date %></small></p>
-            </div>
-
-            <div class="notification-actions">
+              <p><small>Sent to <%= request.requestee.user.username %> for</small> <%= request.requestee.event.name %> <</p>
+              <p class= "reason-comment mt-1">"<%= notification.reason %>"</p>
             </div>
           </div>
          <% end  %>
