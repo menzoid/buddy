@@ -75,9 +75,6 @@ event_description = ["We'll bring our two or three nets to play volleyball at ca
                      "Discover Lisbon while meeting new people in town and exploring a unique street art walk lead by riddles & tips"]
 
 puts "creating users"
-User.create!(username: Faker::FunnyName.two_word_name, email: 'master@games.com', password: '123456')
-User.create!(username: Faker::FunnyName.two_word_name, email: 'zemanel@games.com', password: '123456')
-User.create!(username: Faker::FunnyName.two_word_name, email: 'slave@games.com', password: '123456')
 
 puts "users created"
 puts "creating categories"
