@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :events, through: :bookings
   has_many :requests_as_requestee, through: :bookings
   has_many :requests_as_requester, through: :bookings
+  has_one_attached :photo
 end

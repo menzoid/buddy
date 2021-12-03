@@ -17,6 +17,28 @@ Category.destroy_all
 
 puts "destroyed all"
 
+user_avatars = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_female10_beieia.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_female9_xvqbne.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533370/Buddy/Profile_avatar_male1_llyxze.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533370/Buddy/Profile_avatar_female1_pmutbd.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_male4_ffcvhe.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_female4_zsa1ym.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_female5_ubhc3o.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_male2_jastka.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_female2_zdsxkz.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male6_pqcwdf.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_male5_wq9fch.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_female3_zhofb4.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_male3_lsc4gz.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_female8_xdajqi.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_female6_go3qzc.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_female7_uibzaw.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male9_h8dktd.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male7_txayqs.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male10_z4ihxh.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_male8_dapmcn.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_female9_xvqbne.png"]
+
 event_images = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638463966/Buddy/volleyball_zaf1rt.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638464265/Buddy/Pilates_x1aubu.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638464612/Buddy/Hike_qdlccf.jpg",
@@ -29,15 +51,15 @@ event_images = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638463966/B
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638466004/Buddy/Streetart_tedt0b.jpg"]
 
 event_names = ["Volley and beer at Campo grande garden",
-              "Pilates classes at Work In studio",
-              "Hiking on the Enchanted Serra de Sintra",
-              "Let's go surfing everyday!",
-              "Monchique - SOUTH side slopes",
-              "Alternative Portrait Workshop",
-              "Film Club: One Flew Over the Cuckoo’s Nest",
-              "Drawing Doodling zoom sessions",
-              "Improv workshop- short and long form",
-              "URBAN TRACES | Street Art Walk & City Game"]
+               "Pilates classes at Work In studio",
+               "Hiking on the Enchanted Serra de Sintra",
+               "Let's go surfing everyday!",
+               "Monchique - SOUTH side slopes",
+               "Alternative Portrait Workshop",
+               "Film Club: One Flew Over the Cuckoo’s Nest",
+               "Drawing Doodling zoom sessions",
+               "Improv workshop- short and long form",
+               "URBAN TRACES | Street Art Walk & City Game"]
 
 event_address = ["Lumiar, Lisbon", "Caldas da Rainha, Portugal", "Bairro alto, Lisbon", "Moita, Portugal", "Sagres, Portugal", "Faro, Portugal", "Laranjeiras, Lisbon", "Porto, Portugal","Alverca, Portugal", "Caldas da Rainha, Portugal"]
 
@@ -53,37 +75,39 @@ event_description = ["We'll bring our two or three nets to play volleyball at ca
                      "Discover Lisbon while meeting new people in town and exploring a unique street art walk lead by riddles & tips"]
 
 puts "creating users"
-User.create(username: Faker::FunnyName.two_word_name, email: 'master@games.com', password: '123456')
-User.create(username: Faker::FunnyName.two_word_name, email: 'zemanel@games.com', password: '123456')
-User.create(username: Faker::FunnyName.two_word_name, email: 'slave@games.com', password: '123456')
+User.create!(username: Faker::FunnyName.two_word_name, email: 'master@games.com', password: '123456')
+User.create!(username: Faker::FunnyName.two_word_name, email: 'zemanel@games.com', password: '123456')
+User.create!(username: Faker::FunnyName.two_word_name, email: 'slave@games.com', password: '123456')
 
 puts "users created"
 puts "creating categories"
 
-Category.create(name: 'Outdoors', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/outdoors_lf0trx.png')
-Category.create(name: 'Sports', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Sports_c17b7i.png')
-Category.create(name: 'Live Music', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/live-music_xnyk2q.png')
-Category.create(name: 'Dining', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Dining_syezer.png')
-Category.create(name: 'Travel', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Road-trip_hrgyco.png')
-Category.create(name: 'Art', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Museum_d1ll4m.png')
-Category.create(name: 'Gaming', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Gaming_nzbdsy.png')
-Category.create(name: 'Partying', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Partying_ahe1f1.png')
-Category.create(name: 'Education', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Education_zfphpm.png')
-Category.create(name: 'Mindfulness', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Mindfulness_mqzyhi.png')
+categories = [
+  Category.create!(name: 'Outdoors', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/outdoors_lf0trx.png'),
+  Category.create!(name: 'Sports', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Sports_c17b7i.png'),
+  Category.create!(name: 'Live Music', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/live-music_xnyk2q.png'),
+  Category.create!(name: 'Dining', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Dining_syezer.png'),
+  Category.create!(name: 'Travel', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Road-trip_hrgyco.png'),
+  Category.create!(name: 'Art', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Museum_d1ll4m.png'),
+  Category.create!(name: 'Gaming', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Gaming_nzbdsy.png'),
+  Category.create!(name: 'Partying', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Partying_ahe1f1.png'),
+  Category.create!(name: 'Education', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Education_zfphpm.png'),
+  Category.create!(name: 'Mindfulness', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638455816/Buddy/Mindfulness_mqzyhi.png')
+]
 
 puts "categories created"
 puts "creating intentions"
 
-Intention.create(name: 'Experience')
-Intention.create(name: 'Party')
-Intention.create(name: 'Meet People')
-Intention.create(name: 'Listen to Music')
-Intention.create(name: 'Explore')
-Intention.create(name: 'Exercise')
-Intention.create(name: 'Adventure')
-Intention.create(name: 'Cultural')
-Intention.create(name: 'Dating')
-Intention.create(name: 'Educational')
+Intention.create!(name: 'Experience')
+Intention.create!(name: 'Party')
+Intention.create!(name: 'Meet People')
+Intention.create!(name: 'Listen to Music')
+Intention.create!(name: 'Explore')
+Intention.create!(name: 'Exercise')
+Intention.create!(name: 'Adventure')
+Intention.create!(name: 'Cultural')
+Intention.create!(name: 'Dating')
+Intention.create!(name: 'Educational')
 
 puts "intentions created"
 puts "creating events"
@@ -91,38 +115,40 @@ puts "creating events"
 event_names.each_with_index do |event_name, index|
   event = Event.new(
     name: event_name,
-    address: event_address[0],
-    description: event_description[0],
+    address: event_address[index],
+    description: event_description[index],
     date: Faker::Date.forward(days: 10),
     time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    category_id: rand(1..3)
+    category: categories.sample
   )
   file = URI.open(event_images[index])
-  event.photo.attach(io: file, filename: "#{event}.jpg", content_type: 'image/jpg')
-  event.save
+  event.photo.attach(io: file, filename: "#{event_name}.jpg", content_type: 'image/jpg')
+  event.save!
 end
 puts "events created"
 
 20.times do
-  User.create(
+  user = User.new(
     username: Faker::Internet.username,
-    first_name: Faker::FunnyName.one_word_name,
-    last_name: Faker::FunnyName.one_word_name,
+    first_name: Faker::FunnyName.two_word_name.split(" ")[0],
+    last_name: Faker::FunnyName.two_word_name.split(" ")[1],
     email: Faker::Internet.email,
     password: '123456',
     phone_number: '912345678',
     bio: Faker::Quote.jack_handey
   )
-
+  file = URI.open(user_avatars[0])
+  user.photo.attach(io: file, filename: "#{user}.png", content_type: 'image/png')
+  user.save!
   puts "users created"
 end
 
 100.times do
-  Booking.create(
+  Booking.create!(
     intention_description: Faker::Quote.jack_handey,
-    event_id: rand(1..20),
-    intention_id: rand(1..10),
-    user_id: rand(1..20),
+    event: Event.all.sample,
+    intention: Intention.all.sample,
+    user: User.all.sample,
     created_at: Faker::Date.backward(days: 2),
     updated_at: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
   )
