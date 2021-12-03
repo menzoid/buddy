@@ -9,7 +9,7 @@ require "open-uri"
 require 'faker'
 
 puts "destroying users, intentions, events, categories"
-
+Booking.destroy_all
 Event.destroy_all
 User.destroy_all
 Intention.destroy_all
