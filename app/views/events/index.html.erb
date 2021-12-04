@@ -61,26 +61,46 @@
   </div>
   <%= render 'list', events: @pg_search_events %>
   </div>
+</div>
 
+<%# ---------- test for horizontal scroll ---------------- %>
+
+<div class="app">
+  <h4>Categories</h4>
+
+  <ul class="hs full no-scrollbar">
+
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category) do %>
+        <li class="item card-category">
+          <div class="category-photo">
+            <%= image_tag category.photo %>
+          </div>
+          <div class="category-title">
+          <p><%= category.name %></p>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
 
 
 <%# ----------------- Categories cards section ------------------------%>
-
-  <div class="container">
-    <h2 class="mt">Categories</h2>
-    <div class="cards">
-      <% @categories.each do |category| %>
-        <%= link_to category_path(category) do %>
-          <div class="card-category">
-            <div class="category-photo">
-              <%= image_tag category.photo %>
-            </div>
-            <div class="category-title">
-            <p><%= category.name %></p>
-            </div>
+<div class="container">
+  <h2 class="mt">Categories</h2>
+  <div class="cards">
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category) do %>
+        <div class="card-category">
+          <div class="category-photo">
+            <%= image_tag category.photo %>
           </div>
-        <% end %>
+          <div class="category-title">
+          <p><%= category.name %></p>
+          </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
