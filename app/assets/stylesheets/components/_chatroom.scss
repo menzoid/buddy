@@ -1,0 +1,51 @@
+.chatroom {
+  overflow: hidden;
+  height: 80px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.chatroom .chatroom-content {
+  flex-grow: 1;
+  padding: 0 15px;
+}
+
+.chatroom p {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.chatroom small {
+  color: #999999;
+  font-weight: 300;
+}
+.chatroom .chatroom-actions {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  transition: ease .3s;
+}
+
+.chatroom:hover .chatroom-actions {
+  opacity: 1;
+}
+
+.chatroom .chatroom-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.chatroom .chatroom-actions a:hover {
+  color: #555555;
+}
+
+.reason-comment {
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+}
