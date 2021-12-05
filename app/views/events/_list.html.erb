@@ -2,15 +2,19 @@
   <% if params[:query].present? %>
     <h1 class="h3"><%= pluralize events.count, 'result' %> for <code><%= params[:query] %></code></h1>
 
-    <div class="events">
-      <% events.each do |event| %>
-        <div class="card-event mb-2">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-event-infos">
-            <h2><%= link_to event.name,  event_bookings_path(event) %></h2>
-            <p><strong> <%= event.date %></strong></p>
-        </div>
-      <% end %>
+      <div class="events">
+        <% events.each do |event|%>
+          <%= link_to event_bookings_path(event) do %>
+          <div class="card-event mb-1">
+            <%= image_tag event.photo %>
+            <div class="card-event-infos">
+              <h2><%= event.name%></h2>
+              <p><strong> <%= event.date %></strong></p>
+              <p class= "float-right"><i class="fas fa-map-marker-alt"></i> <%= event.address %></p>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
   <% end %>
-  </div>
 </div>
