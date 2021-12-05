@@ -24,6 +24,23 @@
   color: $yellow;
 }
 
+.btn-signup {
+
+  padding: 8px 24px;
+  border-radius: 30px;
+  background: $green;
+  transition: background 0.3s ease;
+  width: 80%;
+  margin: 0 0 auto;
+  text-align: center;
+}
+
+.btn-signup:hover {
+  background: $green;
+}
+
+
+
 .btn-create {
   color: $yellow;
   padding: 8px 24px;
