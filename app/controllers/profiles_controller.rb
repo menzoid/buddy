@@ -14,11 +14,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find(current_user.profile.id)
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find(current_user.profile.id)
     @profile.update(profile_params)
 
     redirect_to dashboard_path
@@ -27,6 +27,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:username, :first_name, :last_name, :bio, :phone_number)
+    params.require(:profile).permit(:username, :first_name, :last_name, :bio, :phone_number, :photo)
   end
 end

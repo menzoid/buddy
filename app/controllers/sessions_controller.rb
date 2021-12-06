@@ -5,7 +5,7 @@ class SessionsController < Devise::SessionsController
     if resource.profile.present?
       dashboard_path
     else
-      edit_profile_path
+      welcome_path
     end
   end
 end

@@ -3,9 +3,10 @@
   <h5 class="mt-5">Guests Attending</h5>
 
   <% @bookings.each do |booking|  %>
+    <% if booking.user %>
     <%= link_to booking_path(booking), method: :get do %>
       <div class="notification mb-2">
-        <%= image_tag booking.user.profile.photo, class: 'avatar-large' %>
+        <%= cl_image_tag booking.user.profile.photo.key, class: 'avatar-large' %>
         <div class="notification-content">
           <p><small>Intention: <%= booking.intention.name %></small></p>
           <p><strong><%= booking.user.profile.username %></strong></p>
