@@ -7,7 +7,7 @@
       <div class="chatroom mb-2">
         <%= image_tag chatroom.users[1].photo, class: 'avatar-large' %>
         <div class="chatroom-content">
-          <p><%= chatroom.name %> <small>with <%= chatroom.users[1].username %></small></p>
+          <p><%= chatroom.name %> <small>with <%= chatroom.users[1].profile.username %></small></p>
           <p><small>last: <em> <%= chatroom.messages.last.content %> </em> at <%= chatroom.messages.last.created_at %></small></p>
         </div>
 

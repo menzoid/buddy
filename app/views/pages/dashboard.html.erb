@@ -52,7 +52,7 @@
           <div class="notification mb-2">
             <%= image_tag notification.requester.user.photo, class: 'avatar-large' %>
             <div class="notification-content">
-              <p><small> Request from <%= notification.requester.user.username %> for <strong><%= notification.requester.event.name %></strong> on <strong><%= notification.requester.event.date %><strong></small></p>
+              <p><small> Request from <%= notification.requester.user.profile.username %> for <strong><%= notification.requester.event.name %></strong> on <strong><%= notification.requester.event.date %><strong></small></p>
               <p class= "reason-comment mt-1">"<%= notification.reason %>"</p>
             </div>
 
@@ -76,7 +76,7 @@
           <div class="notification mb-2">
             <%= image_tag request.requestee.user.photo, class: 'avatar-large' %>
             <div class="notification-content">
-              <p><small>Sent to <%= request.requestee.user.username %> for <%= request.requestee.event.name %></small> </p>
+              <p><small>Sent to <%= request.requestee.user.profile.username %> for <%= request.requestee.event.name %></small> </p>
               <p class= "reason-comment mt-1">"<%= request.reason %>"</p>
             </div>
           </div>

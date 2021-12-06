@@ -8,7 +8,7 @@
         <%= image_tag booking.user.photo, class: 'avatar-large' %>
         <div class="notification-content">
           <p><small>Intention: <%= booking.intention.name %></small></p>
-          <p><strong><%= booking.user.username %></strong></p>
+          <p><strong><%= booking.user.profile.username %></strong></p>
         </div>
 
         <div class="notification-actions">
