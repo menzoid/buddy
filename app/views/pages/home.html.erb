@@ -1,7 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="top-block mb-5">
+  <%= image_tag 'logobtngreen.png', class: "mb-5" %>
+  <div class="text-center mt-5">
+    <h1>Welcome to Tilhar</h1>
+    <p><em>finding value in shared experiences</em></p>
+  </div>
+</div>
 
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<div class="container">
+  <div class="signup d-flex">
+    <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-signup mt-5" %><br />
+    <p>already have an account? <%= link_to "Login", new_user_session_path %></p>
+  </div>
+</div>
 
 <fieldset class="form-group check_boxes optional snippet_intentions">
   <legend class="col-form-label pt-0">Intentions</legend>

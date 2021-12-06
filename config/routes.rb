@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'events#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :categories, only: :show
@@ -24,4 +24,5 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile"
   get "dashboard", to: "pages#dashboard"
+  get "welcome", to: "pages#welcome"
 end
