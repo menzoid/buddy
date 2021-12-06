@@ -1,0 +1,15 @@
+
+
+<div class="container">
+  <h1>Edit your profile</h1>
+
+  <%= simple_form_for @profile do |f| %>
+    <%= f.input :username %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :bio %>
+    <%= f.input :phone_number %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: "btn btn-create" %>
+  <% end %>
+</div>

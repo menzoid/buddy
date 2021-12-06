@@ -9,6 +9,5 @@ class User < ApplicationRecord
   has_many :events, through: :bookings
   has_many :requests_as_requestee, through: :bookings, foreign_key: :requestee_id
   has_many :requests_as_requester, through: :bookings, foreign_key: :requester_id
-  has_one :profile
-
+  has_one :profile, foreign_key: :user_id
 end

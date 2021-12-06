@@ -5,7 +5,7 @@
   <% @bookings.each do |booking|  %>
     <%= link_to booking_path(booking), method: :get do %>
       <div class="notification mb-2">
-        <%= image_tag booking.user.photo, class: 'avatar-large' %>
+        <%= image_tag booking.user.profile.photo, class: 'avatar-large' %>
         <div class="notification-content">
           <p><small>Intention: <%= booking.intention.name %></small></p>
           <p><strong><%= booking.user.profile.username %></strong></p>

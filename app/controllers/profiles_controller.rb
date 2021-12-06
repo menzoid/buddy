@@ -14,11 +14,14 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-
+    @profile = Profile.find(params[:id])
   end
 
   def update
+    @profile = Profile.find(params[:id])
+    @profile.update(profile_params)
 
+    redirect_to dashboard_path
   end
 
   private
