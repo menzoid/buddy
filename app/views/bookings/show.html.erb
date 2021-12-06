@@ -1,6 +1,6 @@
 <div class="container">
   <div class="buddy-profile text-center">
-    <%= image_tag @buddy.photo %>
+    <%= cl_image_tag @buddy.profile.photo.key %>
     <h4 class="mt-2"><%=@buddy.profile.username  %> </h4>
   </div>
   <div class="intention-info mt-4">
