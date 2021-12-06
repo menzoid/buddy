@@ -1,5 +1,6 @@
 .intention-item {
-  display: inline-block;
+  display: justify;
+  margin: 5px 10px 5px 10px;
 }
 
 .intention-selector {
@@ -9,15 +10,16 @@
 
 .intention-selector + label {
   cursor: pointer;
-  display: inline-block;
-  font-size: 0.7rem;
+  display: space-around;
+  font-size: 0.8rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
   background-color: #e6c17e;
   color: #503e1e;
-  border: 1px solid #e69935;
+  border: 1.5px solid #e69935;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
+  text-align: center;
 }
 
 .intention-selector:checked + label {
