@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :chatroom_users
   has_many :chatrooms, through: :chatroom_users
   has_many :events, through: :bookings
-  has_one_attached :photo
   has_many :requests_as_requestee, through: :bookings, foreign_key: :requestee_id
   has_many :requests_as_requester, through: :bookings, foreign_key: :requester_id
   has_one :profile

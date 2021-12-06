@@ -16,6 +16,7 @@ Chatroom.destroy_all
 Request.destroy_all
 Booking.destroy_all
 Event.destroy_all
+Profile.destroy_all
 User.destroy_all
 Intention.destroy_all
 Category.destroy_all
@@ -130,20 +131,28 @@ puts "events created"
 i = 0
 
 20.times do
-  user = User.new(
+  User.create!(
+    email: Faker::Internet.email,
+    password: '123456',
+  )
+end
+
+puts "users created"
+
+20.times do
+  profile = Profile.new(
     username: Faker::Internet.username,
     first_name: Faker::FunnyName.two_word_name.split(" ")[0],
     last_name: Faker::FunnyName.two_word_name.split(" ")[1],
-    email: Faker::Internet.email,
-    password: '123456',
     phone_number: '912345678',
-    bio: Faker::Quote.jack_handey
+    bio: Faker::Quote.jack_handey,
+    user: User.find(i + 1)
   )
   file = URI.open(user_avatars[i])
-  user.photo.attach(io: file, filename: "#{user}.png", content_type: 'image/png')
-  user.save!
+  profile.photo.attach(io: file, filename: "#{profile}.png", content_type: 'image/png')
+  profile.save!
   i += 1
-  puts "users created"
+  puts "profiles created"
 end
 
 100.times do
