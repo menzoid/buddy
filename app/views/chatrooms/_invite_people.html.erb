@@ -1,0 +1,20 @@
+<div class="modal fade" id="inviteModal" tabindex="-1" role="dialog" aria-labelledby="inviteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title modal-letters" id="inviteModalLabel">Invite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div>
+      <%users_available.each do |user|%>
+      <div class="d-flex justify-content-between">
+            <p> <%=user.email %></p>
+             <p><%= link_to "Add user", chatroom_chatroom_users_path(chatroom, user: user), method: :post, class: "btn btn-primary" %></p>
+      </div>
+         <%end%>
+         </div>
+
+    </div>
+  </div>
+</div>

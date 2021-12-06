@@ -2,7 +2,7 @@
   <h3 class="mb-3">Current Chats</h3>
 </div>
 
-  <% @chatrooms.each do |chatroom|  %>
+  <% @chatrooms_sorted.each do |chatroom|  %>
     <%= link_to chatroom_path(chatroom) do %>
       <div class="chatroom mb-2">
         <%= image_tag chatroom.users[1].photo, class: 'avatar-large' %>
