@@ -1,6 +1,7 @@
 .intention-item {
-  display: justify;
-  margin: 5px 10px 5px 10px;
+  display: inline-flex;
+  padding: 10px 10px 10px 5px;
+  margin-left:auto;
 }
 
 .intention-selector {
@@ -11,18 +12,17 @@
 .intention-selector + label {
   cursor: pointer;
   display: space-around;
-  font-size: 0.8rem;
-  border-radius: 50rem;
+  font-size: 1rem;
+  border-radius: 10rem;
   padding: 0.1rem 0.5rem;
-  background-color: #e6c17e;
-  color: #503e1e;
+  background-color: #E9C891;
+  color: black;
   border: 1.5px solid #e69935;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
   text-align: center;
 }
 
 .intention-selector:checked + label {
-  background-color: orange;
+  background-color: $red;
   color: white;
 }
