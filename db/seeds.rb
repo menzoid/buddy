@@ -10,6 +10,10 @@ require 'faker'
 
 puts "destroying users, intentions, events, categories"
 
+Message.destroy_all
+ChatroomUser.destroy_all
+Chatroom.destroy_all
+Request.destroy_all
 Booking.destroy_all
 Event.destroy_all
 User.destroy_all
