@@ -149,7 +149,7 @@ puts "users created"
     user: User.find(i + 1)
   )
   file = URI.open(user_avatars[i])
-  profile.photo.attach(io: file, filename: "#{profile}.png", content_type: 'image/png')
+  profile.photo.attach(io: file, filename: "#{profile.username}.png", content_type: 'image/png')
   profile.save!
   i += 1
   puts "profiles created"
