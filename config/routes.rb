@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
   resources :profiles, only: %i[new create edit update]
 
-  get "profile", to: "pages#profile"
   get "dashboard", to: "pages#dashboard"
   get "welcome", to: "pages#welcome"
 end
