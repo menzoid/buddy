@@ -20,7 +20,10 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:event_id])
     @bookings = @event.bookings
     @user = current_user
-
+    @markers = [{
+      lat: @event.latitude,
+      lng: @event.longitude
+    }]
   end
 
   def show

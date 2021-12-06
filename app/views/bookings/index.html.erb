@@ -1,21 +1,70 @@
 <div class="container">
-  <h4><%= @event.name %></h4>
-  <h5 class="mt-5">Guests Attending</h5>
+  <div class="index-head">
+    <div class="container-event">
+      <div class="event-img">
+        <%= image_tag @event.photo, class: "event-pic" %>
+      </div>
+    </div>
+    <div class="container">
+      <div class = "event-info">
+        <h2><%= @event.name %></h2>
+      </div>
+    </div>
+    <div class="row edit">
+      <i class="fas fa-calendar"></i>
+      <p><%= @event.date.strftime("%d/%m/%Y") %></p>
+      <p><%= @event.time.strftime("%k:%M")%></p>
+    </div>
+  </div>
+<%# ----- these create the tabs (adapt for mobile)  ------- %>
 
-  <% @bookings.each do |booking|  %>
-    <% if booking.user != @user%>
-      <%= link_to booking_path(booking), method: :get do %>
-        <div class="notification mb-2">
-          <%= cl_image_tag booking.user.profile.photo.key, class: 'avatar-large' %>
-          <div class="notification-content">
-            <p><small>Intention: <%= booking.intention.name %></small></p>
-            <p><strong><%= booking.user.profile.username %></strong></p>
-          </div>
+  <ul class="nav nav-tabs list-inline tabs-underlined mb-3" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active tab-underlined" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link tab-underlined" id="guests-tab" data-toggle="tab" href="#guests" role="tab" aria-controls="guests" aria-selected="false">Attendees</a>
+    </li>
+  </ul>
 
-          <div class="notification-actions">
+  <%#---     this is the tabbed content  -----%>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="myevents" role="tabpanel" aria-labelledby="myevents-tab">
+      <div class="container">
+        <div>
+          <h4>About</h4>
+          <p><%=@event.description%></p>
+        </div>
+        <div class="mapbox-map">
+          <div id="map"
+                style="width: 100%;heigth:100%;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
-      <% end %>
-    <% end %>
-  <% end  %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="guests" role="tabpanel" aria-labelledby="guests-tab">
+      <div class="mb-2 mt-4">
+        <div>
+          <% @bookings.each do |booking|  %>
+            <% if booking.user != @user%>
+              <%= link_to booking_path(booking), method: :get do %>
+                <div class="notification mb-2">
+                  <%= cl_image_tag booking.user.profile.photo.key, class: 'avatar-large' %>
+                  <div class="notification-content">
+                    <p><small>Intention: <%= booking.intention.name %></small></p>
+                    <p><strong><%= booking.user.profile.username %></strong></p>
+                  </div>
+                  <div class="notification-actions">
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% end  %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
