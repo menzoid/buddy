@@ -1,10 +1,17 @@
 <div class="container">
-  <h3 class="mt-4">State your Intention</h3>
+  <h3 class="mt-4">Reveal your Intention...</h3>
   <div>
-    <%= simple_form_for [@event, @booking] do |f| %>
-      <%= f.association :intention, as: :radio_buttons%>
-      <%= f.input :intention_description %>
-      <%= f.submit "Enter Event", class: "btn btn-create"%>
-    <% end %>
+    <fieldset class="form-group radio_buttons optional snippet_intentions">
+      <input type="hidden" name="snippet[intention_ids][]" value="0">
+      <div class="intention-item">
+        <%= simple_form_for [@event, @booking] do |f| %>
+          <%= f.association :intention, as: :radio_buttons,
+                            input_html: { class: "intention-selector" },
+                            item_wrapper_class: 'intention-item'%>
+      </div>
+    </fieldset>
   </div>
+          <%= f.input :intention_description %>
+          <%= f.submit "Enter Event", class: "btn btn-create"%>
+        <% end %>
 </div>

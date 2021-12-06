@@ -6,11 +6,6 @@
   transition: background 0.3s ease;
 }
 
-.btn-flat:hover {
-  background: $orange;
-  color: $yellow;
-}
-
 .btn-signin {
   color: $yellow;
   padding: 8px 24px;
@@ -19,39 +14,23 @@
   transition: background 0.3s ease;
 }
 
-.btn-signin:hover {
-  background: $orange;
-  color: $yellow;
-}
-
 .btn-signup {
 
   padding: 8px 24px;
   border-radius: 30px;
-  background: $green;
+  background: #ce4f25;
   transition: background 0.3s ease;
   width: 80%;
   margin: 0 0 auto;
   text-align: center;
 }
 
-.btn-signup:hover {
-  background: $green;
-}
-
-
-
 .btn-create {
-  color: $yellow;
+  color: $white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $green;
+  background: $red;
   transition: background 0.3s ease;
-}
-
-.btn-create:hover {
-  background: #E07A5F;
-  color: #F4F1DE;
 }
 
 .btn-delete {
@@ -61,9 +40,4 @@
   background: #3D405B80;
   transition: background 0.3s ease;
   font-size: 14px;
-}
-
-.btn-delete:hover {
-  background: #E07A5F;
-  color: #F4F1DE;
 }
