@@ -1,0 +1,26 @@
+.back-button-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1%;;
+  margin-left: 2%;
+}
+.back-button-link a{
+  text-decoration: none;
+}
+
+.back-button p{
+  border: 2px solid $orange;
+  padding: 2px 20px;
+  border-radius: 20px;
+  transition: var(--transition-time);
+  color: $orange;
+}
+.back-button:hover{
+  transition: var(--transition-time);
+  transform: scale(1.15);
+}
+.back-button p:hover{
+  background-color: $orange;
+  color: $dark;
+}

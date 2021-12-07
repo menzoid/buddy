@@ -1,5 +1,16 @@
 
 <div class="container">
+
+  <div class="back-button-link">
+    <%= link_to 'javascript:history.go(-1);' do %>
+      <div class="back-button">
+        <p>Back</p>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Back", :back, :class => "btn btn-inverse" %>
+
   <h3><%= @category.name %></h3>
 
   <% @events.each do |event|  %>

@@ -3,6 +3,14 @@
   <h4 class="text-right"> Welcome home <%= @user.profile.username %></h4>
   <h5 class="text-center mt-3"> Featured Events </h5>
 
+<div class="back-button-link">
+  <%= link_to 'javascript:history.go(-1);' do %>
+    <div class="back-button">
+      <p>Back</p>
+    </div>
+  <% end %>
+</div>
+
 <%# ----- new carousel --------- %>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
