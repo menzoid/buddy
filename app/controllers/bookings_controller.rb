@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:event_id])
     @bookings = @event.bookings
     @user = current_user
+    @intention = @bookings.select { |booking| booking.user == @user }
     @markers = [{
       lat: @event.latitude,
       lng: @event.longitude
