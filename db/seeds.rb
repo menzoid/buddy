@@ -56,18 +56,18 @@ event_images = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638463966/B
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638465867/Buddy/Improv_mvtkal.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638466004/Buddy/Streetart_tedt0b.jpg"]
 
-event_names = ["Volley and beer at Campo grande garden",
-               "Pilates classes at Work In studio",
-               "Hiking on the Enchanted Serra de Sintra",
-               "Let's go surfing everyday!",
-               "Monchique - SOUTH side slopes",
-               "Alternative Portrait Workshop",
-               "Film Club: One Flew Over the Cuckoo’s Nest",
-               "Drawing Doodling zoom sessions",
-               "Improv workshop- short and long form",
-               "URBAN TRACES | Street Art Walk & City Game"]
+event_names = { "Volley and beer at Campo grande garden" => "Outdoors",
+                "Pilates classes at Work In studio" => "Mindfulness",
+                "Hiking on the Enchanted Serra de Sintra" => "Outdoors",
+                "Let's go surfing everyday!" => "Sports",
+                "Monchique - SOUTH side slopes" => "Travel",
+                "Alternative Portrait Workshop" => "Education",
+                "Film Club: One Flew Over the Cuckoo’s Nest" => "Art",
+                "Drawing Doodling zoom sessions" => "Art",
+                "Improv workshop- short and long form" => "Art",
+                "Street Art Walk & City Game" => "Outdoors" }
 
-event_address = ["Lumiar, Lisbon", "Caldas da Rainha, Portugal", "Bairro alto, Lisbon", "Moita, Portugal", "Sagres, Portugal", "Faro, Portugal", "Laranjeiras, Lisbon", "Porto, Portugal","Alverca, Portugal", "Caldas da Rainha, Portugal"]
+event_address = ["Lumiar, Lisbon", "Cascais, Portugal", "Sintra, Portugal", "Carcavelos, Portugal", "Monchique, Portugal", "Bairro Alto, Lisbon", "Laranjeiras, Lisbon", "Porto, Portugal","Alverca, Portugal", "Cais do Sodre, Lisbon"]
 
 event_description = ["We'll bring our two or three nets to play volleyball at campo grande garden. Theres a cheap tapas restaurant nearby if you want to eat /drink something after.",
                      "We are inviting you to join our Pilates mat workout in a beautiful place at 'Work In studio'",
@@ -79,7 +79,6 @@ event_description = ["We'll bring our two or three nets to play volleyball at ca
                      "Weekly Online Drawing Doodling sessions Fridays 8pm - 9pm Various drawing / doodling activities",
                      "Improv drops you into that wondrous world of high-energy, immediate, person-to-person interaction.",
                      "Discover Lisbon while meeting new people in town and exploring a unique street art walk lead by riddles & tips"]
-
 
 puts "creating categories"
 
@@ -115,12 +114,12 @@ puts "creating events"
 
 event_names.each_with_index do |event_name, index|
   event = Event.new(
-    name: event_name,
+    name: event_name[0],
     address: event_address[index],
     description: event_description[index],
     date: Faker::Date.forward(days: 10),
     time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    category: categories.sample
+    category: Category.find_by(name: event_name[1])
   )
   file = URI.open(event_images[index])
   event.photo.attach(io: file, filename: "#{event_name}.jpg", content_type: 'image/jpg')
@@ -131,31 +130,29 @@ puts "events created"
 i = 0
 
 20.times do
-  User.create!(
-    email: Faker::Internet.email,
-    password: '123456',
+  username = Faker::Internet.username
+  user = User.create!(
+    email: "#{username}@mail.com",
+    password: '123456'
   )
-end
-
-puts "users created"
-
-20.times do
   profile = Profile.new(
-    username: Faker::Internet.username,
-    first_name: Faker::FunnyName.two_word_name.split(" ")[0],
-    last_name: Faker::FunnyName.two_word_name.split(" ")[1],
+    username: username,
+    first_name: Faker::Name.name.split(" ")[0],
+    last_name: Faker::Name.name.split(" ")[1],
     phone_number: '912345678',
     bio: Faker::Quote.jack_handey,
-    user: User.find(i + 1)
+    user: user
   )
+  (i + 1)
   file = URI.open(user_avatars[i])
   profile.photo.attach(io: file, filename: "#{profile.username}.png", content_type: 'image/png')
   profile.save!
   i += 1
+  puts "users created"
   puts "profiles created"
 end
 
-100.times do
+60.times do
   Booking.create!(
     intention_description: Faker::Quote.jack_handey,
     event: Event.all.sample,
