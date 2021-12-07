@@ -2,20 +2,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title modal-letters" id="requestModalLabel">Send Request</h5>
+        <h5 class="modal-title modal-letters" id="requestModalLabel">State your Case</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+
+      <div class="container">
+        <%=simple_form_for [booking,request] do |f|  %>
+        <%=f.input :reason, hint: 'why do you want to go with them?'  %>
+        <%= f.submit "Send Request", class: "btn btn-flat" %>
+        <%end %>
       </div>
-        <%= simple_form_for [game,booking] do |f| %>
-      <div class="modal-body">
-        <%= f.input :reason, class:"modal-letters" %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Send request", class: "btn btn-primary" %>
-      </div>
-      <% end %>
-    </div>
+
   </div>
 </div>

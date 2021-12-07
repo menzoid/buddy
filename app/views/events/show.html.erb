@@ -18,10 +18,12 @@
   </div>
 
   <% if @join_available %>
-  <div class="Join">
-    <%= link_to "Join Event", new_event_booking_path(@event), class: "btn btn-create"  %>
+  <div class="show-buttons Join">
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#intentionsModal">
+    Join Event
+  </button>
   </div>
-  </div>
+<%= render 'intentions', event: @event, booking: @booking%>
   <% end %>
 
 <div class="mapbox-map">

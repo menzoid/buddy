@@ -14,5 +14,11 @@
   </div>
 
 
-  <%= link_to "Send Request", new_booking_request_path(@booking), class: 'btn btn-create' %>
+
+  <div class="show-buttons Send Request">
+  <button type="button" class="btn btn-create" data-toggle="modal" data-target="#requestModal">
+    Send Request
+  </button>
+  </div>
+  <%= render 'request_modal', booking: @booking, request: @request%>
 </div>

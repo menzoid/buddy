@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.event = @event
     @booking.user = current_user
     if @booking.save
-      redirect_to event_bookings_path
+      redirect_to event_bookings_path(@event)
     else
       render :new
     end
@@ -29,6 +29,7 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @buddy = @booking.user
+    @request = Request.new
   end
 
   private
