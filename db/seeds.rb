@@ -118,6 +118,7 @@ event_names.each_with_index do |event_name, index|
     name: event_name,
     address: event_address[index],
     description: event_description[index],
+    start_time: Faker::Time.between(from: DateTime.now - 1, to: Date.today + 10),
     date: Faker::Date.forward(days: 10),
     time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     category: categories.sample

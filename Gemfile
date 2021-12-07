@@ -33,6 +33,7 @@ gem 'pundit'
 gem 'faker'
 gem 'pg_search'
 gem 'geocoder'
+gem "simple_calendar"
 
 gem 'materialize-sass', '~> 1.0.0'
 
