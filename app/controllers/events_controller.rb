@@ -5,6 +5,7 @@ class EventsController < ApplicationController
     @events = Event.all
     @categories = Category.all
     @user = current_user
+    @date = Time.now.strftime("%d %b %Y")
 
     if params[:query].present?
       @pg_search_events = Event.search_by_name(params[:query])
@@ -14,7 +15,6 @@ class EventsController < ApplicationController
       format.text { render partial: 'list.html', locals: { events: @pg_search_events } }
     end
   end
-
 
   def show
     @event = Event.find(params[:id])

@@ -1,69 +1,50 @@
-
-<div class="container">
-  <h4 class="text-right"> Welcome home <%= @user.profile.username %></h4>
-  <h5 class="text-center mt-3"> Featured Events </h5>
-
-<%# ----- new carousel --------- %>
-
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag @featured_events[0].photo, class: "d-block w-100" %>
-      <div class="carousel-caption d-md-block">
-        <h5><%= @featured_events[0].name %></h5>
-        <p><%= @featured_events[0].date %></p>
+<div class="top-block">
+  <div class="top-block-container">
+    <div class="index-user-header d-flex justify-content-between align-items-center mb-4">
+      <div class="index-user-info d-flex align-items-center">
+        <%= cl_image_tag @user.profile.photo.key, class: "avatar-large" %>
+        <div class="date-name">
+          <p class="date mb-0"><%= @date %></p>
+          <p class="name mb-0"><%= @user.profile.first_name %> <%= @user.profile.last_name %></p>
+        </div>
+      </div>
+      <div class="index-user-links d-flex">
+        <div class="index-icon"><i class="fas fa-bell text-white"></i></div>
+        <div class="index-icon"><i class="fas fa-comment text-white"></i></div>
+        <div class="index-icon"><i class="fas fa-bars text-white"></i></div>
       </div>
     </div>
-    <div class="carousel-item">
-      <%= image_tag @featured_events[1].photo, class: "d-block w-100" %>
-      <div class="carousel-caption d-md-block">
-        <h5><%= @featured_events[1].name %></h5>
-        <p><%= @featured_events[1].date %></p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag @featured_events[2].photo, class: "d-block w-100" %>
-      <div class="carousel-caption d-md-block">
-        <h5><%= @featured_events[2].name %></h5>
-        <p><%= @featured_events[2].date %></p>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
 
 <%# ------------  search -------------- %>
 
-  <h5 class="mt-5"> Search Events! </h5>
-  <div class= "input-container" data-controller="refresh-list">
-  <div class="justify-content-center">
-    <div class="search-bar col-8">
-      <%= form_with url: events_path, method: :get, style:"width:100%", html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
-        <%= f.text_field :query,
-                          class: "form-control",
-                          placeholder: 'search for an event',
-                          value: params[:query],
-                          data: {
-                          refresh_list_target: 'searchInput',
-                          action: "keyup->refresh-list#update"
-                        } %>
-      <% end %>
+    <div class="index-search pb-2">
+      <div class="events-search-title">
+        <h6>Find events</h6>
+        <p><%= @events.count %> events near you</p>
+      </div>
+      <div class= "input-container" data-controller="refresh-list">
+        <div class="justify-content-center">
+          <div class="search-bar">
+            <%= form_with url: events_path, method: :get, style:"width:100%", html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+              <%= f.text_field :query,
+                                class: "form-control",
+                                placeholder: ' ++ search for upcoming events',
+                                value: params[:query],
+                                data: {
+                                refresh_list_target: 'searchInput',
+                                action: "keyup->refresh-list#update"
+                              } %>
+            <% end %>
+          </div>
+        </div>
+        <%= render 'list', events: @pg_search_events %>
+      </div>
     </div>
   </div>
-  <%= render 'list', events: @pg_search_events %>
-  </div>
 </div>
-
 <%# ---------- test for horizontal scroll ---------------- %>
+
+<h5 class="text-center mt-3"> Featured Events </h5>
 
 <div class="app">
   <h4>Categories</h4>
