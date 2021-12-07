@@ -4,6 +4,8 @@ class EventsController < ApplicationController
     @featured_events = Event.all.sample(5)
     @events = Event.all
     @categories = Category.all
+    @outdoors = @events.select { |event| event.category.name == "Outdoors" }
+    @dinings = @events.select { |event| event.category.name == "Dining" }
     @user = current_user
     @date = Time.now.strftime("%d %b %Y")
 
@@ -22,6 +24,5 @@ class EventsController < ApplicationController
       lat: @event.latitude,
       lng: @event.longitude
     }]
-
   end
 end

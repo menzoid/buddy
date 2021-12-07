@@ -17,18 +17,18 @@
 
 <%# ------------  search -------------- %>
 
-    <div class="index-search pb-2">
-      <div class="events-search-title">
-        <h6>Find events</h6>
-        <p><%= @events.count %> events near you</p>
+    <div class="index-search pb-1">
+      <div class="events-search-title mb-2">
+        <h5>Find events</h5>
+        <p><%= @events.count %> vibes happening near you</p>
       </div>
       <div class= "input-container" data-controller="refresh-list">
         <div class="justify-content-center">
           <div class="search-bar">
-            <%= form_with url: events_path, method: :get, style:"width:100%", html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+            <%= form_with url: events_path, method: :get, style:"width:70%", html: { class: 'searchbar', data: { refresh_list_target: 'form' } } do |f| %>
               <%= f.text_field :query,
                                 class: "form-control",
-                                placeholder: ' ++ search for upcoming events',
+                                placeholder: '...',
                                 value: params[:query],
                                 data: {
                                 refresh_list_target: 'searchInput',
@@ -42,23 +42,24 @@
     </div>
   </div>
 </div>
-<%# ---------- test for horizontal scroll ---------------- %>
-
-<h5 class="text-center mt-3"> Featured Events </h5>
+<%# ---------- popular events horizontal scroll ---------------- %>
 
 <div class="app">
-  <h4>Categories</h4>
-
+  <h5>Popular Events</h5>
   <ul class="hs full no-scrollbar">
 
-    <% @categories.each do |category| %>
-      <%= link_to category_path(category) do %>
-        <li class="item card-category">
-          <div class="category-photo">
-            <%= image_tag category.photo %>
+    <% @featured_events.each do |event| %>
+      <%= link_to event_path(event) do %>
+        <li class="event-card">
+          <div class="event-card-photo">
+            <%= cl_image_tag event.photo.key %>
           </div>
-          <div class="category-title">
-          <p><%= category.name %></p>
+          <div class="event-card-info p-2">
+            <div class="date-guests d-flex justify-content-between">
+              <div class="date-time"><%= event.date.strftime("%d/%m/%Y") %> | <%= event.time.strftime("%k:%M")%></div>
+              <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
+            </div>
+            <p><%= event.name %></p>
           </div>
         </li>
       <% end %>
@@ -66,10 +67,59 @@
   </ul>
 </div>
 
+<%# ---------- outdoor events horizontal scroll ---------------- %>
+
+<div class="app">
+  <h5>Outdoor Events</h5>
+  <ul class="hs full no-scrollbar">
+
+    <% @outdoors.each do |event| %>
+      <%= link_to event_path(event) do %>
+        <li class="event-card">
+          <div class="event-card-photo">
+            <%= cl_image_tag event.photo.key %>
+          </div>
+          <div class="event-card-info p-2">
+            <div class="date-guests d-flex justify-content-between">
+              <div class="date-time"><%= event.date.strftime("%d/%m/%Y") %> | <%= event.time.strftime("%k:%M")%></div>
+              <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
+            </div>
+            <p><%= event.name %></p>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<%# ---------- dining events horizontal scroll ---------------- %>
+
+<div class="app">
+  <h5>Dining Events</h5>
+  <ul class="hs full no-scrollbar">
+
+    <% @dinings.each do |event| %>
+      <%= link_to event_path(event) do %>
+        <li class="event-card">
+          <div class="event-card-photo">
+            <%= cl_image_tag event.photo.key %>
+          </div>
+          <div class="event-card-info p-2">
+            <div class="date-guests d-flex justify-content-between">
+              <div class="date-time"><%= event.date.strftime("%d/%m/%Y") %> | <%= event.time.strftime("%k:%M")%></div>
+              <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
+            </div>
+            <p><%= event.name %></p>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
 
 <%# ----------------- Categories cards section ------------------------%>
-<div class="container">
-  <h2 class="mt">Categories</h2>
+<div class="categories pb-3">
+  <h2 class="mb-4 pt-3 pl-3">Categories</h2>
   <div class="cards">
     <% @categories.each do |category| %>
       <%= link_to category_path(category) do %>

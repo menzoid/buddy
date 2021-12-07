@@ -3,7 +3,7 @@
 }
 
 .index-user-header {
-  padding-top: 15px;
+  padding-top: 28px;
 }
 
 .index-user-info {
@@ -45,4 +45,33 @@
     opacity: 0.9;
     vertical-align: middle;
     }
+}
+
+.index-search {
+  padding-bottom: 60px;
+}
+
+.events-search-title h5 {
+  margin-bottom: 0px;
+  color: white;
+
+}
+
+.events-search-title p {
+  margin-bottom: 0px;
+  color: white;
+  opacity: 0.7;
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.searchbar {
+  margin-bottom: 38px;
+  border-radius: 10px;
+}
+
+.form-control {
+  border-radius: 8px;
+  width: 95%;
+  margin: 0 auto;
 }
