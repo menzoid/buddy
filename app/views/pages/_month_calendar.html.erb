@@ -8,7 +8,7 @@
         </button>
          </div>
 
-          <%= month_calendar(events: @events_month) do |date, events| %>
+          <%= month_calendar(events: events_month) do |date, events| %>
             <%= date %>
 
             <% events.each do |event| %>

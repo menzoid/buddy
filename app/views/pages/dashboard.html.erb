@@ -11,21 +11,13 @@
       </div>
     </div>
   </div>
-
-<div class="show-buttons">
-  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#calendarModal">
-    Calendar
-  </button>
-  <%=render 'month_calendar', events_month: @events_month%>
-</div>
-
+<%# ----- Calendar  ------- %>
 <div class="calendar-container">
     <%= month_calendar(events: @events_month) do |date, events| %>
       <%= date %>
-
       <% events.each do |event| %>
         <div class="events_month">
-          <p><%= link_to event.name, event_path(event) %></p>
+          <p><%= link_to event.name[0..6], event_path(event) %></p>
         </div>
       <% end %>
     <% end %>
