@@ -60,6 +60,9 @@
               <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
             </div>
             <p><%= event.name %></p>
+            <div class="event-location">
+              <%= event.address %>
+            </div>
           </div>
         </li>
       <% end %>
