@@ -3,6 +3,15 @@
       <%= image_tag @event.photo, class: "event-pic" %>
     </div>
 </div>
+
+<div class="back-button-link">
+  <%= link_to 'javascript:history.go(-1);' do %>
+    <div class="back-button">
+      <p>Back</p>
+    </div>
+  <% end %>
+</div>
+
 <div class="container">
   <div class = "event-info">
     <h2><%= @event.name %></h2>
@@ -17,11 +26,12 @@
     <p><%=@event.description%></p>
   </div>
 
-
+  <% if @join_available %>
   <div class="Join">
     <%= link_to "Join Event", new_event_booking_path(@event), class: "btn btn-create"  %>
   </div>
   </div>
+  <% end %>
 
 <div class="mapbox-map">
   <div id="map"

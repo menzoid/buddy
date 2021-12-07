@@ -11,8 +11,17 @@
       </div>
     </div>
   </div>
-
-
+<%# ----- Calendar  ------- %>
+<div class="calendar-container">
+    <%= month_calendar(events: @events_month) do |date, events| %>
+      <%= date %>
+      <% events.each do |event| %>
+        <div class="events_month">
+          <p><%= link_to event.name[0..6], event_path(event) %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 <%# ----- these create the tabs (adapt for mobile)  ------- %>
 
   <ul class="nav nav-tabs list-inline tabs-underlined mb-3" id="myTab" role="tablist">

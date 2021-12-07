@@ -24,5 +24,7 @@ class EventsController < ApplicationController
       lat: @event.latitude,
       lng: @event.longitude
     }]
+    @join_available = current_user.bookings.each { |booking| booking.event_id == @event.id ? false : true  }
+
   end
 end
