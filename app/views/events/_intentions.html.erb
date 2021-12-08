@@ -11,20 +11,17 @@
   <div>
     <fieldset class="form-group radio_buttons optional snippet_intentions">
       <input type="hidden" name="snippet[intention_ids][]" value="0">
-      <div class="intention-item">
         <%= simple_form_for [event, booking] do |f| %>
+        <div class="intention-item">
           <%= f.association :intention, as: :radio_buttons,
                             input_html: { class: "intention-selector" },
                             item_wrapper_class: 'intention-item'%>
-      </div>
-    </fieldset>
-
-  </div>
+        </div>
           <%= f.input :intention_description %>
-          <%= f.submit "Enter Event", class: "btn btn-create"%>
+          <%= f.submit "Enter Event", class: "btn btn-create btn-booking"%>
      <% end %>
+     </fieldset>
     </div>
-
   </div>
 </div>
 </div>

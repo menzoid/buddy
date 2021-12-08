@@ -1,12 +1,17 @@
 .intention-item {
   display: inline-flex;
-  padding: 10px 10px 10px 5px;
+  //padding: 10px 10px 10px 5px;
   margin-left:auto;
+  padding: 20px;
 }
 
 .intention-selector {
   position: absolute;
   transform: scale(0);
+}
+
+.booking_intention_description {
+  padding:20px
 }
 
 .intention-selector + label {
