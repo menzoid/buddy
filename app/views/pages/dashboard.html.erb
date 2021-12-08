@@ -12,7 +12,7 @@
     </div>
   </div>
 
-</div>
+
 
 <%# ----- these create the tabs (adapt for mobile)  ------- %>
 
@@ -28,6 +28,8 @@
     </li>
   </ul>
 
+</div>
+
   <%#---     this is the tabbed content  -----%>
 
   <div class="tab-content" id="myTabContent">
@@ -36,7 +38,13 @@
               <%# upcoming section %>
 
       <div class="app scroll-section-top">
-        <h5>Upcoming Events</h5>
+        <div class="calendar-link d-flex justify-content-between align-items-center">
+          <h5>My Upcoming Events</h5>
+          <div class="d-flex">
+            <h5 class="mb-0 pb-0 mr-3"><i class="fas fa-plus"></i></h5>
+            <h5 class="mb-0 pb-0"><i class="fas fa-calendar-alt"></i></h5>
+          </div>
+        </div>
         <ul class="hs full no-scrollbar">
           <% @events.each do |event| %>
             <%= link_to event_bookings_path(event) do %>
@@ -62,13 +70,14 @@
 
                         <%# Categories tabs %>
       <div>
+        <h5 class="cat-tab-header">My Categories</h5>
         <ul class="nav nav-tabs list-inline list-inline-scroll mb-3" id="catTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id='<%=@categories.first.name%>-tab' data-toggle="tab" href="#<%=@categories.first.name%>" role="tab" aria-controls="<%=@categories.first.name%>" aria-selected="false"><%=@categories.first.name%></a>
+              <a class="" id='<%=@categories.first.name%>-tab' data-toggle="tab" href="#<%=@categories.first.name%>" role="tab" aria-controls="<%=@categories.first.name%>" aria-selected="false"><%=@categories.first.name%></a>
             </li>
           <% @categories.each do |category| %>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id='<%=category.name%>-tab' data-toggle="tab" href="#<%=category.name%>" role="tab" aria-controls="<%category.name%>" aria-selected="false"><%=category.name%></a>
+              <a class="" id='<%=category.name.gsub(" ","")%>-tab' data-toggle="tab" href="#<%=category.name.gsub(" ","")%>" role="tab" aria-controls="<%category.name.gsub(" ","")%>" aria-selected="false"><%=category.name%></a>
             </li>
           <% end %>
         </ul>
@@ -78,7 +87,6 @@
         <div class="tab-content" id="catTabContent">
           <div class="tab-pane fade show active" id="<%=@categories.first.name%>" role="tabpanel" aria-labelledby="<%=@categories.first.name%>-tab">
             <div class="app scroll-section">
-              <h5><%=@categories.first.name%></h5>
               <ul class="hs full no-scrollbar">
                 <% @categories.first.events.each do |event| %>
                   <%= link_to event_path(event) do %>
@@ -103,9 +111,8 @@
             </div>
           </div>
         <% @categories.each do |category| %>
-          <div class="tab-pane fade show" id="<%=category.name%>" role="tabpanel" aria-labelledby="<%=category.name%>-tab">
+          <div class="tab-pane fade show" id="<%=category.name.gsub(" ","") %>" role="tabpanel" aria-labelledby="<%=category.name.gsub(" ","")%>-tab">
             <div class="app scroll-section">
-                <h5><%= category.name %></h5>
                 <ul class="hs full no-scrollbar">
                   <% category.events.each do |event| %>
                     <%= link_to event_path(event) do %>
