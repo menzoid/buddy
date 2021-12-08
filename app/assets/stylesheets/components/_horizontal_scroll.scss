@@ -3,12 +3,23 @@
 }
 
 .scroll-section {
-  background-color: white;
-  border-bottom: 1px solid $gray;
-  border-top: 1px solid $gray;
-  margin-bottom: 12px;
-}
+  margin-bottom: -6px;
+  color: $blue;
 
+  h5 {
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 18px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
+}
 .scroll-section-header {
   display: flex;
   justify-content: space-between;
@@ -16,14 +27,28 @@
 }
 
 .scroll-section-top {
-  background-color: white;
-  border-bottom: 1px solid $gray;
-  margin-bottom: 12px;
+  margin-bottom: -6px;
+
+  h5 {
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 18px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
 }
 
 
+
+
 .app {
-  padding: var(--gutter) 0;
+  padding-top: 8px;
   display: grid;
   grid-gap: var(--gutter) 0;
   grid-template-columns: var(--gutter) 1fr var(--gutter);
@@ -105,7 +130,6 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fff;
 }
 
 
@@ -117,4 +141,11 @@ h3 {
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.all-events {
+  p {
+    font-weight: 400;
+    color: $orange;
+  }
 }

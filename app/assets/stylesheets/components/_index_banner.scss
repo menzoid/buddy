@@ -2,8 +2,13 @@
   margin: 0px 15px;
 }
 
+.top-block {
+  margin-bottom: 10px;
+}
+
 .index-user-header {
   padding-top: 28px;
+  padding-bottom: 5px;
 }
 
 .index-user-info {
@@ -33,17 +38,19 @@
 }
 
 .index-icon {
-  background-color: #F4C093;
+  background-color: #f4a59c;
   margin-left: 10px;
   width: 38px;
   height: 38px;
   padding: 5px;
   border-radius: 10px;
   text-align: center;
+  // line-height: 1.4;
     i {
     font-size: 20px;
     opacity: 0.9;
     vertical-align: middle;
+    line-height: 1.4;
     }
 }
 
