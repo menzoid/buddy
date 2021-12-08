@@ -4,6 +4,8 @@ class EventsController < ApplicationController
     @featured_events = Event.all.sample(5)
     @events = Event.all
     @categories = Category.all
+    @outdoor = @categories.select { |category| category.name == "Outdoors" }
+    @dining = @categories.select { |category| category.name == "Dining" }
     @outdoors = @events.select { |event| event.category.name == "Outdoors" }
     @dinings = @events.select { |event| event.category.name == "Dining" }
     @user = current_user

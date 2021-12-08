@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings
     # @bookings_all = Booking.all
     @events = current_user.events
+    @categories = Category.all
     # @notifications = @bookings.requests_as_requestee
     # @requests = @bookings.requests_as_requester
     @notifications = current_user.requests_as_requestee.pending
