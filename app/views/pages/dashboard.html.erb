@@ -39,7 +39,7 @@
         <h5>Upcoming Events</h5>
         <ul class="hs full no-scrollbar">
           <% @events.each do |event| %>
-            <%= link_to event_path(event) do %>
+            <%= link_to event_bookings_path(event) do %>
               <li class="event-card">
                 <div class="event-card-photo">
                   <%= cl_image_tag event.photo.key %>
