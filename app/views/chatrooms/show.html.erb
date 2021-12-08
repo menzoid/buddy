@@ -1,8 +1,10 @@
-<div class="container">
-  <h1>#<%= @chatroom.name %></h1>
+<div class="container mb-3">
+  <h5>#<%= @chatroom.name %></h5>
+</div>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <%= render @chatroom.messages %>
   </div>
+<div class="container">
   <div class="message-form">
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "type message here" %>
@@ -10,7 +12,7 @@
   </div>
 </div>
 
-<div class="show-buttons">
+<%# <div class="show-buttons">
   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#inviteModal">
     Invite people
   </button>
