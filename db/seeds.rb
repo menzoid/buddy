@@ -46,7 +46,7 @@ user_avatars = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/B
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_female9_xvqbne.png"]
 
 event_images = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638964847/Buddy/volleyball_j7stlq.jpg",
-                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638464265/Buddy/Pilates_x1aubu.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638976395/Buddy/bruce-mars-gJtDg6WfMlQ-unsplash_ytqgsf.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963794/Buddy/hiking_w9khn0.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638464619/Buddy/Surf_lesson_fgqhrq.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638964098/Buddy/monchique_s0tsl7.jpg",
@@ -54,41 +54,41 @@ event_images = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638964847/B
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638465646/Buddy/Movie_q9kksh.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963664/Buddy/drawing_ftny0y.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638465867/Buddy/Improv_mvtkal.jpg",
-                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638466004/Buddy/Streetart_tedt0b.jpg",
-                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638908227/Buddy/ceviche_u9d3xv.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638974926/Buddy/alocalsguidetolisbonstreetart-816x612_g9rypx.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638974410/Buddy/ceviche_958x540_dp1e07.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638908363/Buddy/Disco_xxjea0.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638964188/Buddy/mercado_natal_avc6qb.jpg",
-                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638909667/Buddy/Capitao_fausto_vqeons.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638975034/Buddy/mw-1240_pzkzey.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638910269/Buddy/alabamagospelchoir2021_hotsb4.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638910517/Buddy/tb_a4rr72.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638910732/Buddy/comic-con-portugal-20-cover_kpadmq.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638911242/Buddy/corrida-sao-silvestre-de-lisboa-21-cover_sqnefv.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638911143/Buddy/royal-palace-2021-22_wnhqyz.jpg",
-                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638911704/Buddy/1875-tasca-da-esquina_e15iuo.jpg"]
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638976296/Buddy/bacalhau_ulmnpr.jpg"]
 
 event_names = { "Volley and beer at Campo grande garden" => "Sports",
-                "Pilates classes at Work In studio" => "Mindfulness",
+                "Pilates at Work In studio" => "Mindfulness",
                 "Hiking on the Enchanted Serra de Sintra" => "Outdoors",
                 "Let's go surfing!" => "Sports",
-                "Monchique - SOUTH side slopes" => "Travel",
+                "Hiking - SOUTH side slopes" => "Travel",
                 "Alternative Portrait Workshop" => "Education",
                 "Film Club: One Flew Over the Cuckoo’s Nest" => "Art",
                 "Drawing Doodling zoom sessions" => "Art",
                 "Improv workshop- short and long form" => "Art",
                 "Street Art Walk & City Game" => "Outdoors",
-                "Workshop - World Cuisines: PERU – CEVICHE" => "Dining",
+                "Workshop - CEVICHE" => "Dining",
                 "LUXXXMAS @Lux Frágil" => "Partying",
                 "Alvalade Christmas Market" => "Outdoors",
-                "Live - Capitão Fausto" => "Live Music",
+                "SoundFlower Fest" => "Live Music",
                 "Alabama Gospel Choir" => "Live Music",
-                "Tiago Bettencourt" => "Live Music",
+                "Tiago Bettencourt - Live" => "Live Music",
                 "Comic-Con Portugal'21" => "Gaming",
                 "São Silvestre de Lisboa Race'21" => "Sports",
                 "Royal Palace 2021 - New Year's Eve" => "Partying",
                 "Tasca da Esquina" => "Dining" }
 
-event_address = ["Lumiar, Lisbon", "Cascais, Portugal", "Sintra, Portugal", "Carcavelos, Portugal", "Monchique, Portugal",
-                 "Bairro Alto, Lisbon", "Laranjeiras, Lisbon", "Porto, Portugal","Alverca, Portugal", "Cais do Sodre, Lisbon",
+event_address = ["Lumiar, Lisbon", "Cascais, Portugal", "Sintra, Portugal", "Carcavelos, Portugal", "Monsanto, Portugal",
+                 "Bairro Alto, Lisbon", "Laranjeiras, Lisbon", "Beato, Lisbon", "Alverca, Portugal", "Cais do Sodre, Lisbon",
                  "Mercado da Ribeira, Lisbon", "Av Inf D Henrique, Lisbon", "Alvalade, Lisbon", "Lx Factory, Lisbon",
                  "Coliseu de Lisboa, Lisbon", "Coliseu de Lisboa, Lisbon", "Altice Arena, Lisbon", "Avenida da Liberdade, Lisbon",
                  "Parque Eduardo VII, Lisbon", "Rua Domingos Sequeira, Lisbon"]
@@ -97,16 +97,16 @@ event_description = ["We'll bring our two or three nets to play volleyball at ca
                      "We are inviting you to join our Pilates mat workout in a beautiful place at 'Work In studio'",
                      "This is a sweet & easy hike in the forested area of southern Serra de Sintra. We'll start at the charming village of Malveira da Serra, climb to Penedo da Roçada's to enjoy the views",
                      "SURF and EXPERIENCE for First-timers and advanced. We have lessons at 10 or 10:30am, 12 or 12:30pm and 2 or 2:30pm on weekends. 10 or 10:30 during the week.",
-                     "This is an international group for lovers of walking, who want to be in the great outdoors, and discovering more of the Western Algarve.",
+                     "This is an international group for lovers of walking, who want to be in the great outdoors, and discovering more of the Monsanto park.",
                      "Alternative portrait workshop is a good opportunity to free your mind, try different approach in painting and to develop your creativity",
-                     "The films of this cycle explore the absence of empathy in different social situations.",
+                     "What is the drive behind the actions of a cruel teenager or an obsessive voyeur? Can nurture overwrite nature? How can we cope with the lack of remorse? The films of this cycle explore the absence of empathy in different social situations..",
                      "Weekly Online Drawing Doodling sessions Fridays 8pm - 9pm Various drawing / doodling activities",
-                     "Improv drops you into that wondrous world of high-energy, immediate, person-to-person interaction.",
+                     "Improv drops you into that wondrous world of high-energy, immediate, person-to-person interaction. The event will be held in Room 4.02 - on the 4th floor in the main building, there is an elevator available. Bring yourself and your positive attitude ready to shake off your day and wear clothes that are easy to move around in.",
                      "Discover Lisbon while meeting new people in town and exploring a unique street art walk lead by riddles & tips",
-                     "Peruvian cuisine emerged from various cultural interchanges over the centuries, making for a unique blend",
-                     "Lisbon's best club, provides the best christmas party in town.",
+                     "From the result of various cultural exchanges over time, Peruvian cuisine was born, unique in the world. In this workshop, come learn more about the flavors, origins and tradition of this cuisine. Learn from chef Miguel Mesquita how to make a classic ceviche and a Causa Limeña.",
+                     "Lisbon's best club, provides the best christmas party in town, this time with a grand Christmassy production to keep your body moving for hours on end. Be whisked away to a frosty world of arctic animals, igloos and snow covered forests to get into the festive spirit, all soundtracked to a huge line-up of dance legends and new talent alike. ",
                      "It has been customary to see countless wooden houses on Avenida da Igreja when December arrives. This year is not an exception: the famous Alvalade Christmas Market is back with stalls, crafts and food",
-                     "Capitão Fausto bring their modern pop music to the Lx Factory to close the 2021 tour",
+                     "Capitão Fausto no SoundFlower Fest takes place at Lx Factory, in Lisbon. The event, which was supposed to take place in Valada in September, was canceled and rescheduled because of the pandemic. Thus was born the festival that is being presented as a Christmas edition.",
                      "Alabama Gospel Choir give us a journey to the roots interpreting all the Gospel classics in a unique register that combines euphoria and strength with a more spiritual essence.",
                      "Live and in colour, Bettencourt presents a project that was born digitally. “Tiago na Toca” emerged during the first lockdown and was revealed every week when he opened the doors of his home to the public.",
                      "During the four days, there will be national and international artists from Cinema, Television, Comics, Literature, Cosplay, Anime, Manga, Videogames, Music and Youtube that will be present in panels",
@@ -130,7 +130,7 @@ event_dates = [["Sat, 11 Dec 2021", "15:30"],
                ["Thu, 25 Dec 2021", "22:00"],
                ["Fri, 24 Dec 2021", "12:00"],
                ["Mon, 20 Dec 2021", "20:00"],
-               ["Fri-Sun, 10-12 Dec 2021", "12:00"],
+               ["Sun, 12 Dec 2021", "12:00"],
                ["Mon, 27 Dec 2021", "10:00"],
                ["Fri, 31 Dec 2021", "22:00"],
                ["Tue, 28 Dec 2021", "20:00"]]
@@ -210,15 +210,15 @@ end
 
 Event.all.each do |event|
   User.all.sample(5).each do |user|
-  Booking.create!(
-    intention_description: Faker::Quote.jack_handey,
-    event: event,
-    intention: Intention.all.sample,
-    user: user,
-    created_at: Faker::Date.backward(days: 2),
-    updated_at: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
-  )
+    Booking.create!(
+      intention_description: Faker::Quote.jack_handey,
+      event: event,
+      intention: Intention.all.sample,
+      user: user,
+      created_at: Faker::Date.backward(days: 2),
+      updated_at: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
+    )
 
-  puts "bookings created"
+    puts "bookings created"
   end
 end
