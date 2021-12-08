@@ -14,7 +14,6 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = current_user.chatrooms
-    @chatrooms_sorted = @chatrooms.messages.order(updated_at: :desc)
-    raise
+    @chatrooms_sorted = @chatrooms.order(updated_at: :desc)
   end
 end
