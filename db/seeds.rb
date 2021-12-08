@@ -175,6 +175,8 @@ event_names.each_with_index do |event_name, index|
     date: Date.parse(event_dates[index][0]),
     time: event_dates[index][1],
     category: Category.find_by(name: event_name[1])
+    start_time: Faker::Time.between(from: DateTime.now - 1, to: Date.today + 10),
+
   )
   file = URI.open(event_images[index])
   event.photo.attach(io: file, filename: "#{event_name}.jpg", content_type: 'image/jpg')

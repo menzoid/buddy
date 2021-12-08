@@ -1,0 +1,35 @@
+<%# ----- new carousel --------- %>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag @featured_events[0].photo, class: "d-block w-100" %>
+      <div class="carousel-caption d-md-block">
+        <h5><%= @featured_events[0].name %></h5>
+        <p><%= @featured_events[0].date %></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag @featured_events[1].photo, class: "d-block w-100" %>
+      <div class="carousel-caption d-md-block">
+        <h5><%= @featured_events[1].name %></h5>
+        <p><%= @featured_events[1].date %></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag @featured_events[2].photo, class: "d-block w-100" %>
+      <div class="carousel-caption d-md-block">
+        <h5><%= @featured_events[2].name %></h5>
+        <p><%= @featured_events[2].date %></p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

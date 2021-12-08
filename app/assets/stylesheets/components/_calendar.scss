@@ -1,0 +1,40 @@
+.simple-calendar {
+  overflow: auto;
+  table {
+    max-height: 80vh;
+    width:100%;
+  }
+  .today {
+    background-color: #FAF3DD;
+  }
+  td {
+    max-width: 9%;
+    height: 2px;
+    max-height: 1px;
+
+  }
+  td p {
+    margin-bottom: 0;
+  }
+}
+.event {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.event:hover {
+  background: #1BCB7F;
+  color: white;
+}
+.events_month {
+  p a {
+    font-size: 10px;
+  }
+}
+
+.simple-calendar td {
+  max-width: 15px;
+}

@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   background-color: white;
+  height: 150px;
 }
 
 .category-photo img {
@@ -47,4 +48,8 @@
     grid-template-columns: 1fr 1fr;
     margin: 10px 15px 0px 15px;
   }
+}
+
+.categories {
+  background-color: #F4C093;
 }
