@@ -2,6 +2,26 @@
   --gutter: 20px;
 }
 
+.scroll-section {
+  background-color: white;
+  border-bottom: 1px solid $gray;
+  border-top: 1px solid $gray;
+  margin-bottom: 12px;
+}
+
+.scroll-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scroll-section-top {
+  background-color: white;
+  border-bottom: 1px solid $gray;
+  margin-bottom: 12px;
+}
+
+
 .app {
   padding: var(--gutter) 0;
   display: grid;
@@ -69,6 +89,12 @@ h3 {
   // height: 240px;
   // padding-bottom: 0;
   overflow-y: scroll;
+}
+
+.list-inline-scroll {
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  // align-content: flex-start;
 }
 
 .hs > li,
