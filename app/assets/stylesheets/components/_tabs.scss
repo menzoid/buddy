@@ -19,6 +19,7 @@
   transform: skewX(18deg);
   background: none;
   background-color: $orange;
+  border-radius: 5px;
   transition: background 0.3s ease;
   font-variant: small-caps;
 
@@ -61,6 +62,7 @@
 .list-inline-scroll > .nav-item {
   background-color: #f4a59c;
   padding: 3px 8px;
+    border-radius: 3px;
   transform: skew(20deg);
   margin-left: 8px;
   font-size: 14px;
