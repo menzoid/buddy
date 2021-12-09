@@ -18,11 +18,12 @@
 
   padding: 8px 24px;
   border-radius: 30px;
-  background: #ce4f25;
+  background: $orange;
   transition: background 0.3s ease;
-  width: 80%;
+  width: 50%;
   margin: 0 0 auto;
   text-align: center;
+  color: white;
 }
 
 .btn-create {
@@ -34,8 +35,8 @@
 }
 
 .btn-booking {
-      width: 100%;
-    margin-bottom: -16px;
+  width: 100%;
+  margin-bottom: -16px;
 }
 
 .btn-delete {
