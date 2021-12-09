@@ -1,6 +1,11 @@
-<div class="container mb-3">
-  <h5>#<%= @chatroom.name %></h5>
+<div class="top-block-small">
+    <%= link_to :back do %>
+      <div class="btn-back"><i class="fas fa-chevron-left"></i></div>
+    <% end %>
+    <h3 class="top-block-heading">#<%= @chatroom.name[0..14] %></h3>
 </div>
+
+
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <%= render @chatroom.messages %>
   </div>
