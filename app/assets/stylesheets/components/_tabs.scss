@@ -23,8 +23,9 @@
   transition: background 0.3s ease;
   font-variant: small-caps;
 
-  span {
+  p {
     transform: skewX(-18deg);
+    margin-bottom: 0px;
   }
 }
 
@@ -62,11 +63,26 @@
 .list-inline-scroll > .nav-item {
   background-color: #f4a59c;
   padding: 3px 8px;
-    border-radius: 3px;
+  border-radius: 3px;
   transform: skew(20deg);
   margin-left: 8px;
   font-size: 14px;
   font-weight: 600px;
+
+  p {
+    transform: skewX(-18deg);
+    margin-bottom: 0px;
+    color: white;
+  }
+
+}
+
+.list-inline-scroll .nav-item.active {
+
+    p {
+    transform: skewX(-18deg);
+    margin-bottom: 0px;
+  }
 
 }
 

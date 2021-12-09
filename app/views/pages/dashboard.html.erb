@@ -18,13 +18,13 @@
 
   <ul class="nav nav-tabs list-inline tabs-underlined mb-2" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true"><span>Events</span></a>
+      <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true"><p>Events</p></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false"><span>Notifications</span></a>
+      <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false"><p>Notifications</p></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="nudgespending-tab" data-toggle="tab" href="#nudgespending" role="tab" aria-controls="nudgespending" aria-selected="false"><span>Pending</span></a>
+      <a class="nav-link tab-underlined" id="nudgespending-tab" data-toggle="tab" href="#nudgespending" role="tab" aria-controls="nudgespending" aria-selected="false"><p>Pending</p></a>
     </li>
   </ul>
 
@@ -78,11 +78,11 @@
         </div>
         <ul class="nav nav-tabs list-inline list-inline-scroll no-scrollbar mb-2 mt-2" id="catTab" role="tablist">
             <li class="nav-item ml-3" role="presentation">
-              <a class="" id='allTab-tab' data-toggle="tab" href="#allTab" role="tab" aria-controls="allTab" aria-selected="false">All</a>
+              <a class="" id='allTab-tab' data-toggle="tab" href="#allTab" role="tab" aria-controls="allTab" aria-selected="false"><p>All</p></a>
             </li>
           <% @categories.each do |category| %>
             <li class="nav-item" role="presentation">
-              <a class="" id='<%=category.name.gsub(" ","")%>-tab' data-toggle="tab" href="#<%=category.name.gsub(" ","")%>" role="tab" aria-controls="<%category.name.gsub(" ","")%>" aria-selected="false"><%=category.name%></a>
+              <a class="" id='<%=category.name.gsub(" ","")%>-tab' data-toggle="tab" href="#<%=category.name.gsub(" ","")%>" role="tab" aria-controls="<%category.name.gsub(" ","")%>" aria-selected="false"><p><%=category.name%></p></a>
             </li>
           <% end %>
         </ul>
