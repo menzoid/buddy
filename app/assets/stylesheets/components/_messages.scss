@@ -1,14 +1,14 @@
-.messages {
+.messages-user {
   overflow: hidden;
   height: 60px;
   background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
-  align-items: center;
+  align-items: right;
   border-radius: 6px;
   padding-left: 15px;
   // border-bottom: 1px solid $light-gray;
-  width: 80%;
+  width: 30%;
   margin-bottom: 3px;
   margin-left: 5px;
 }
@@ -65,4 +65,30 @@
   font-weight: 300;
   font-style: italic;
   text-align: center;
+}
+
+.message-container .current-user {
+  .messages {
+      display: flex;
+      width: 30%;
+      justify-content: flex-end;
+
+  }
+
+}
+
+
+.messages-contacts {
+  overflow: hidden;
+  height: 60px;
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: left;
+  border-radius: 6px;
+  padding-left: 15px;
+  // border-bottom: 1px solid $light-gray;
+  width: 30%;
+  margin-bottom: 3px;
+  margin-left: 5px;
 }
