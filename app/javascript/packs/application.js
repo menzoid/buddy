@@ -27,6 +27,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel'
 import { initMapbox } from '../plugins/init_mapbox';
+import { flipCard } from '../plugins/card_flip';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -34,11 +35,12 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initChatroomCable();
   initMapbox();
-  var cards = document.querySelectorAll('.card-flip');
-  cards.forEach((card) => {
-    card.addEventListener('click', function () {
-      console.log(card);
-      card.classList.toggle('is-flipped');
-    });
-  });
+  flipCard();
+  // var cards = document.querySelectorAll('.card-flip');
+  // cards.forEach((card) => {
+  //   card.addEventListener('click', function () {
+  //     console.log(card);
+  //     card.classList.toggle('is-flipped');
+  //   });
+  // });
 });

@@ -1,12 +1,12 @@
 .chatroom {
   overflow: hidden;
-  height: 180px;
+  height: 95px;
+  width: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   border-radius: 8px;
-  margin: 0 10px 0 10px;
 }
 
 .chatroom .chatroom-content {
@@ -33,10 +33,19 @@
   justify-content: center;
   align-items: center;
   margin-top: 5px;
-  padding: 8px 5px;
+  padding: 0px;
 
   i {
     margin: 0px 2px;
+  }
+}
+
+.chatroom-name {
+  position: relative;
+  h6 {
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 0;
   }
 }
 
@@ -46,7 +55,6 @@
 
 .chatroom .chatroom-actions a {
   color: #999999;
-  margin-left: 16px;
   font-size: 14px;
 }
 
@@ -60,5 +68,9 @@
 .message-form {
   position:fixed;
   bottom:28px;
-  width:85%
+  width:92%
+}
+
+.name-date-time p {
+  font-size: 12px;
 }

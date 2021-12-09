@@ -1,18 +1,14 @@
-const flip = () => {
-
-  const element = document.querySelector(".card-flip")
-  function transformFunction() {
-    if (element.style.transform == "rotateY(180deg)") {
-      element.style.transform = "rotateY(0deg)";
-    }
-    else {
-      element.style.transform = "rotateY(180deg)";
-    }
+const flipCard = () => {
+  const cards = document.querySelectorAll('.card-whole');
+  if (cards) {
+    cards.forEach((card) => {
+      card.addEventListener('click', function () {
+        console.log(card);
+        card.firstElementChild.classList.toggle('hidden');
+        card.lastElementChild.classList.toggle('hidden');
+      });
+    })
   }
-  if (element) {
-    element.addEventListener("click", transformFunction)
-  }
-
 };
 
-export { flip }
+export { flipCard };
