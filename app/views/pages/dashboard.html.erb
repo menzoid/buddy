@@ -157,35 +157,41 @@
                         <%# Notifcations %>
 
     <div class="tab-pane fade" id="nudgesin" role="tabpanel" aria-labelledby="nudgesin-tab">
-      <div class="mb-2 mt-4 info-section">
-        <div>
+      <div class=" mb-2 mt-3 mr-2 ml-2 info-section">
          <% @notifications.each do |notification|  %>
           <div class="notification mb-2">
-            <%= cl_image_tag notification.requester.user.profile.photo.key, class: 'avatar-big' %>
-            <div class="notification-content">
-              <h6><small>from</small> <%= notification.requester.user.profile.username %> <small>for</small>  <%= notification.created_at.strftime("%d %m") %></h6>
-              <p class= "reason-comment mt-3">"<%= notification.reason %>"</p>
-              <h6 class="notification-event mt-3"><small>for: </small><%= notification.requester.event.name[0..23] %>...</h6>
+            <div class="request-user-infos">
+              <%= cl_image_tag notification.requester.user.profile.photo.key, class: 'avatar-big' %>
+              <p><%= notification.requester.user.profile.username %></p>
             </div>
+            <div class="notification-content">
+              <div class="notification-details">
+                <h5 class="notification-event mt-3"><small class="mr-1">for: </small><%= notification.requester.event.name[0..40] %></h5>
+                <h6 class="text-right"><small class="mr-1">sent on: </small><%= notification.created_at.strftime("%d %m") %></h6>
+              </div>
 
-            <div class="notification-actions mr-4">
-              <%= link_to accept_request_url(notification), method: :patch do %>
-                <i class="fas fa-check-circle text-success"></i>
-              <% end %>
-              <%= link_to reject_request_path(notification), method: :patch do %>
-                <i class="fas fa-times-circle text-danger"></i>
-              <% end %>
+              <%# hidden div with reason and actions %>
+              <div class="notification-reason">
+                <p class= "reason-comment mt-3">"<%= notification.reason %>"</p>
+                <div class="notification-actions">
+                  <%= link_to accept_request_url(notification), method: :patch do %>
+                    <p>accept <i class="fas fa-check-circle text-success"></i></p>
+                  <% end %>
+                  <%= link_to reject_request_path(notification), method: :patch do %>
+                    <p>reject <i class="fas fa-times-circle text-danger"></i></p>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
          <% end  %>
-        </div>
       </div>
     </div>
 
                               <%# Requests %>
 
     <div class="tab-pane fade" id="nudgespending" role="tabpanel" aria-labelledby="nudgespending-tab">
-      <div class="info-section mt-3 mr-2 ml-2">
+      <div class="info-section mb-2 mt-3 mr-2 ml-2">
          <% @requests.each do |request|  %>
           <div class="request mb-2">
             <div class="request-user-infos">
