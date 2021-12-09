@@ -159,10 +159,10 @@
               </div>
               <div class="notification-content">
                 <div class="notification-details">
-                  <h5 class="notification-event mt-3"><small class="mr-1">for: </small><%= notification.requester.event.name[0..40] %></h5>
-                  <h6 class="text-right"><small class="mr-1">sent on: </small><%= notification.created_at.strftime("%d %m") %></h6>
+                  <h5 class="notification-event"><small class="mr-1">for: </small><%= notification.requester.event.name %></h5>
                 </div>
               </div>
+              <h6 class="sent-time"><small class="mr-1">sent on: </small><%= notification.created_at.strftime("%d %m") %></h6>
             </div>
               <%# hidden div with reason and actions %>
             <div class="notification hidden mb-2">
@@ -171,7 +171,7 @@
                 <p><%= notification.requester.user.profile.username %></p>
               </div>
               <div class="notification-reason">
-                <p class= "reason-comment mt-3">"<%= notification.reason %>"</p>
+                <p class= "reason-comment">"<%= notification.reason %>"</p>
                 <div class="notification-actions">
                   <%= link_to accept_request_url(notification), method: :patch do %>
                     <p>accept <i class="fas fa-check-circle text-success"></i></p>
@@ -200,9 +200,9 @@
             </div>
             <div class="request-content">
               <%# <p class= "reason-comment mt-3">""</p> %>
-              <h5 class="request-event mt-3"><small class="mr-1">for: </small><%= request.requestee.event.name[0..40] %></h5>
-              <h6 class="text-right"><small class="mr-1">sent on:</small> <%= request.created_at.strftime("%d %b") %></h6>
+              <h5 class="request-event"><small class="mr-1">for: </small><%= request.requestee.event.name %></h5>
             </div>
+            <h6 class="sent-time"><small class="mr-1">sent on:</small> <%= request.created_at.strftime("%d %b") %></h6>
           </div>
           <div class="request hidden mb-2">
             <div class="request-user-infos">
@@ -210,7 +210,7 @@
               <p><%= request.requestee.user.profile.username %></p>
             </div>
             <div class="request-content">
-              <p class= "reason-comment mt-3">"<%= request.reason %>"</p>
+              <p class= "reason-comment">"<%= request.reason %>"</p>
             </div>
           </div>
         </div>

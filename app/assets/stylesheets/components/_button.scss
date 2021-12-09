@@ -57,6 +57,12 @@
   opacity: 0.9;
   background: $orange;
   transform: skew(18deg);
+
+  p {
+    transform: skew(-18deg);
+    margin-bottom: 0px;
+    font-variant: small-caps;
+  }
 }
 
 .btn-booking {
