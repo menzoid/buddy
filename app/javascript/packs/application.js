@@ -9,6 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -27,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel'
 import { initMapbox } from '../plugins/init_mapbox';
+
 
 
 document.addEventListener('turbolinks:load', () => {
