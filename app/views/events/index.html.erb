@@ -79,11 +79,12 @@
 <div class="app scroll-section">
   <div class="scroll-section-header">
     <div>
-      <h5>Outdoor Events</h5>
+      <h5>Outdoor Adventures</h5>
       <p>Get out there man</p>
     </div>
     <div>
-      <p><%= link_to "ALL", category_path(@outdoor) %><small><%= @outdoors.count %></small></p>    </div>
+      <p class="all-events"><%= link_to "all", category_path(@outdoor) %><small> (<%= @outdoors.count %>)</small></p>
+    </div>
   </div>
   <ul class="hs full no-scrollbar">
 
@@ -99,9 +100,9 @@
               <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
             </div>
             <p><%= event.name %></p>
-            <div class="event-location text-right">
-              <p><i class="fas fa-map-marker-alt"></i> <%= event.address %></p>
-            </div>
+          </div>
+          <div class="event-location text-right">
+            <p><i class="fas fa-map-marker-alt"></i> <%= event.address %></p>
           </div>
         </li>
       <% end %>
@@ -114,11 +115,11 @@
 <div class="app scroll-section">
   <div class="scroll-section-header">
     <div>
-      <h5>Dining Events</h5>
+      <h5>Dining Extravaganzas</h5>
       <p>For the fuzzy tingle nighttimes</p>
     </div>
     <div>
-      <p><%= link_to "ALL", category_path(@dining) %><small><%= @dinings.count %></small></p>
+      <p><%= link_to "all", category_path(@dining) %><small> (<%= @dinings.count %>)</small></p>
     </div>
   </div>
   <ul class="hs full no-scrollbar">
@@ -146,7 +147,7 @@
 </div>
 
 <%# ----------------- Categories cards section ------------------------%>
-<div class="categories pb-3">
+<div class="categories mt-3 pb-3">
   <h2 class="mb-4 pt-3 pl-3">Categories</h2>
   <div class="cards">
     <% @categories.each do |category| %>

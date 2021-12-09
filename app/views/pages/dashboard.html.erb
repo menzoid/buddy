@@ -12,13 +12,13 @@
     </div>
   </div>
 
-</div>
+
 
 <%# ----- these create the tabs (adapt for mobile)  ------- %>
 
   <ul class="nav nav-tabs list-inline tabs-underlined mb-2" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true">My Events</a>
+      <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true">Events</a>
     </li>
     <li class="nav-item" role="presentation">
       <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false">Notifications</a>
@@ -28,6 +28,8 @@
     </li>
   </ul>
 
+</div>
+
   <%#---     this is the tabbed content  -----%>
 
   <div class="tab-content" id="myTabContent">
@@ -36,7 +38,12 @@
               <%# upcoming section %>
 
       <div class="app scroll-section-top">
-        <h5>Upcoming Events</h5>
+        <div class="d-flex justify-content-between align-items-center">
+          <h5>My Created Events</h5>
+          <div class="d-flex">
+            <h5 class="mb-0 pb-0"><i class="fas fa-plus"></i></h5>
+          </div>
+        </div>
         <ul class="hs full no-scrollbar">
           <% @events.each do |event| %>
             <%= link_to event_bookings_path(event) do %>
@@ -62,13 +69,20 @@
 
                         <%# Categories tabs %>
       <div>
+        <div class="calendar-link d-flex justify-content-between align-items-center">
+          <h5>My Upcoming Events</h5>
+          <div class="d-flex">
+            <h5 class="mb-0 pb-0 mr-3"><i class="fas fa-map-marked-alt"></i></i></h5>
+            <h5 class="mb-0 pb-0"><i class="fas fa-calendar-alt"></i></h5>
+          </div>
+        </div>
         <ul class="nav nav-tabs list-inline list-inline-scroll mb-3" id="catTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id='<%=@categories.first.name%>-tab' data-toggle="tab" href="#<%=@categories.first.name%>" role="tab" aria-controls="<%=@categories.first.name%>" aria-selected="false"><%=@categories.first.name%></a>
+              <a class="" id='allTab-tab' data-toggle="tab" href="#allTab" role="tab" aria-controls="allTab" aria-selected="false">All</a>
             </li>
           <% @categories.each do |category| %>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id='<%=category.name%>-tab' data-toggle="tab" href="#<%=category.name%>" role="tab" aria-controls="<%category.name%>" aria-selected="false"><%=category.name%></a>
+              <a class="" id='<%=category.name.gsub(" ","")%>-tab' data-toggle="tab" href="#<%=category.name.gsub(" ","")%>" role="tab" aria-controls="<%category.name.gsub(" ","")%>" aria-selected="false"><%=category.name%></a>
             </li>
           <% end %>
         </ul>
@@ -76,9 +90,8 @@
                 <%# Events by category %>
 
         <div class="tab-content" id="catTabContent">
-          <div class="tab-pane fade show active" id="<%=@categories.first.name%>" role="tabpanel" aria-labelledby="<%=@categories.first.name%>-tab">
+          <div class="tab-pane fade show active" id="allTab" role="tabpanel" aria-labelledby="allTab-tab">
             <div class="app scroll-section">
-              <h5><%=@categories.first.name%></h5>
               <ul class="hs full no-scrollbar">
                 <% @categories.first.events.each do |event| %>
                   <%= link_to event_path(event) do %>
@@ -103,9 +116,8 @@
             </div>
           </div>
         <% @categories.each do |category| %>
-          <div class="tab-pane fade show" id="<%=category.name%>" role="tabpanel" aria-labelledby="<%=category.name%>-tab">
+          <div class="tab-pane fade show" id="<%=category.name.gsub(" ","") %>" role="tabpanel" aria-labelledby="<%=category.name.gsub(" ","")%>-tab">
             <div class="app scroll-section">
-                <h5><%= category.name %></h5>
                 <ul class="hs full no-scrollbar">
                   <% category.events.each do |event| %>
                     <%= link_to event_path(event) do %>
@@ -149,47 +161,54 @@
                         <%# Notifcations %>
 
     <div class="tab-pane fade" id="nudgesin" role="tabpanel" aria-labelledby="nudgesin-tab">
-      <div class="mb-2 mt-4 info-section">
-        <div>
+      <div class=" mb-2 mt-3 mr-2 ml-2 info-section">
          <% @notifications.each do |notification|  %>
           <div class="notification mb-2">
-            <%= cl_image_tag notification.requester.user.profile.photo.key, class: 'avatar-big' %>
-            <div class="notification-content">
-              <h6><small>from</small> <%= notification.requester.user.profile.username %> <small>for</small>  <%= notification.created_at.strftime("%d %m") %></h6>
-              <p class= "reason-comment mt-3">"<%= notification.reason %>"</p>
-              <h6 class="notification-event mt-3"><small>for: </small><%= notification.requester.event.name[0..23] %>...</h6>
+            <div class="request-user-infos">
+              <%= cl_image_tag notification.requester.user.profile.photo.key, class: 'avatar-big' %>
+              <p><%= notification.requester.user.profile.username %></p>
             </div>
+            <div class="notification-content">
+              <div class="notification-details">
+                <h5 class="notification-event mt-3"><small class="mr-1">for: </small><%= notification.requester.event.name[0..40] %></h5>
+                <h6 class="text-right"><small class="mr-1">sent on: </small><%= notification.created_at.strftime("%d %m") %></h6>
+              </div>
 
-            <div class="notification-actions mr-4">
-              <%= link_to accept_request_url(notification), method: :patch do %>
-                <i class="fas fa-check-circle text-success"></i>
-              <% end %>
-              <%= link_to reject_request_path(notification), method: :patch do %>
-                <i class="fas fa-times-circle text-danger"></i>
-              <% end %>
+              <%# hidden div with reason and actions %>
+              <div class="notification-reason">
+                <p class= "reason-comment mt-3">"<%= notification.reason %>"</p>
+                <div class="notification-actions">
+                  <%= link_to accept_request_url(notification), method: :patch do %>
+                    <p>accept <i class="fas fa-check-circle text-success"></i></p>
+                  <% end %>
+                  <%= link_to reject_request_path(notification), method: :patch do %>
+                    <p>reject <i class="fas fa-times-circle text-danger"></i></p>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
          <% end  %>
-        </div>
       </div>
     </div>
 
                               <%# Requests %>
 
     <div class="tab-pane fade" id="nudgespending" role="tabpanel" aria-labelledby="nudgespending-tab">
-      <div class="mb-2 info-section">
-        <div>
+      <div class="info-section mb-2 mt-3 mr-2 ml-2">
          <% @requests.each do |request|  %>
-          <div class="request mb-1">
-            <%= cl_image_tag request.requestee.user.profile.photo.key, class: 'avatar-big' %>
+          <div class="request mb-2">
+            <div class="request-user-infos">
+              <%= cl_image_tag request.requestee.user.profile.photo.key, class: 'avatar-large' %>
+              <p><%= request.requestee.user.profile.username %></p>
+            </div>
             <div class="request-content">
-              <h6><small>sent to:</small> <%= request.requestee.user.profile.username %> <small>on</small> <%= request.created_at.strftime("%d %m") %></h6>
-              <p class= "reason-comment mt-3">"<%= request.reason %>"</p>
-              <h6 class="request-event mt-3"><small>for: </small><%= request.requestee.event.name[0..23] %>...</h6>
+              <%# <p class= "reason-comment mt-3">""</p> %>
+              <h5 class="request-event mt-3"><small class="mr-1">for: </small><%= request.requestee.event.name[0..40] %></h5>
+              <h6 class="text-right"><small class="mr-1">sent on:</small> <%= request.created_at.strftime("%d %b") %></h6>
             </div>
           </div>
          <% end  %>
-        </div>
       </div>
     </div>
   </div>
