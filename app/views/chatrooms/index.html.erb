@@ -1,17 +1,33 @@
-<div class="container mt-3">
-  <h3 class="mb-3">Current Chats</h3>
+<div class="top-block-small">
+    <h3 class="top-block-heading">Current Chats</h3>
 </div>
 
   <% @chatrooms_sorted.each do |chatroom|  %>
     <%= link_to chatroom_path(chatroom) do %>
       <div class="chatroom mb-2">
-        <%= cl_image_tag chatroom.users[1].profile.photo.key, class: 'avatar-large' %>
-        <div class="chatroom-content">
-          <p><%= chatroom.name %> <small>with <%= chatroom.users[1].profile.username %></small></p>
-          <p><small>last: <em> <%= chatroom.messages.last.content %> </em> at <%= chatroom.messages.last.created_at %></small></p>
+        <div class="chatroom-photo">
+          <%= cl_image_tag chatroom.users[0].profile.photo.key, class: 'avatar-big' %>
         </div>
+        <div>
+          <div class="chatroom-content">
+            <div class="name-date d-flex justify-content-between">
+              <p><%= chatroom.users[0].profile.username %></p>
+              <p><%= chatroom.messages.last.created_at.strftime('%l:%M%P') %></p>
+            </div>
+            <p><small><em> <%= chatroom.messages.last.content %> </em></small></p>
+          </div>
 
-        <div class="chatroom-actions">
+          <div class="chatroom-name mt-4">
+            <h6><%= chatroom.name %></h6>
+            <div class="chatroom-actions">
+              <%= link_to root_path do %>
+                <p>edit<i class="fas fa-check-circle text-success"></i></p>
+              <% end %>
+              <%= link_to root_path do %>
+                <p>delete <i class="fas fa-times-circle text-danger"></i></p>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

@@ -1,12 +1,11 @@
 .notification {
   overflow: hidden;
-  height: 150px;
+  height: 240px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   border-radius: 8px;
-  padding-left: 15px;
 }
 
 .notification .notification-content {
@@ -15,10 +14,21 @@
   margin-left: 12px;
 }
 
-.notification p {
+.notification-content p {
   margin: 0;
   line-height: 1.1;
 }
+
+.notification-content h5 {
+  // margin: 0;
+  font-size: 15px;
+}
+
+.notification-content h6 {
+  // margin: 0;
+  font-size: 11px;
+}
+
 
 .notification small {
   color: #999999;
@@ -28,8 +38,14 @@
 .notification .notification-actions {
   opacity: 1;
   display: flex;
-  flex-direction: column;
-  transition: ease .3s;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  padding: 8px 5px;
+
+  i {
+    margin: 0px 2px;
+  }
 }
 
 .notification:hover .notification-actions {

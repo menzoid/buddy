@@ -1,12 +1,12 @@
 .tabs-underlined {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .tabs-underlined .tab-underlined {
-  color: $gray;
-  padding: 8px;
+  color: $blue;
+  padding: 6px 14px 6px 14px;
   margin: 8px 4px;
   opacity: .4;
   cursor: pointer;
@@ -15,11 +15,12 @@
 
 .tabs-underlined .tab-underlined.active {
   opacity: 0.9;
-  color: $blue;
-  border-radius: 15px;
+  color: $light-gray;
+  border-radius: 30px;
   background: none;
+  background-color: $orange;
   transition: background 0.3s ease;
-  border: 1px solid $blue;
+  font-variant: small-caps;
 }
 
 .nav-tabs {
@@ -30,4 +31,52 @@
   font-size: 15px;
   border: none;
 
+}
+
+.dash-head h3 {
+  color: $orange;
+}
+
+.nav-item {
+  font-variant: small-caps;
+}
+
+.list-inline-scroll {
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  // background-color: $orange;
+  // opacity: 0.4;
+  -webkit-overflow-scrolling: touch;
+  height: 40px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  scrollbar-width: none;
+  // align-content: flex-start;
+}
+
+.list-inline-scroll > .nav-item {
+  background-color: #f4a59c;
+  padding: 8px 8px;
+  border-radius: 20px;
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600px;
+
+}
+
+.cat-tab-header {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 8px 0 10px 19px;
+}
+
+.calendar-link {
+  padding: 0 20px 0 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+
+  h5 {
+  font-weight: 600;
+  font-size: 18px;
+  }
 }
