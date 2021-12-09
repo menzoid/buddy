@@ -26,6 +26,7 @@
 
   i {
     font-size: 12px;
+    color: $orange;
   }
 }
 
@@ -47,4 +48,13 @@
     color: $blue;
     font-weight: 300;
   }
+
+  i {
+    color: $orange;
+  }
+}
+
+.event-icons-main {
+  font-size: 14px;
+  color: $orange;
 }

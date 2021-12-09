@@ -1,7 +1,15 @@
 
+.index-head {
+  border-bottom: 2px solid $gray ;
+  margin-bottom: 10px;
+}
 
 .event-img{
   width:100%;
+  img {
+      height: 200px;
+  }
+
 }
 
 .event-pic{
@@ -16,9 +24,34 @@
 }
 
 .event-info {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  margin-top: 18px;
+
+  h4 {
+    font-weight: 600;
+    font-size: 24px;
+  }
 }
 
-.event-icons p, i {
-  color: $orange;
+.event-icons {
+
+  i {
+    color: $orange;
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.move-up {
+  margin-top: -10px;
+}
+
+.full-event-details {
+  h4 {
+    font-size: 20px;
+    font-weight: 500;
+  }
 }
