@@ -29,7 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel'
 import { initMapbox } from '../plugins/init_mapbox';
-import { initFlatpickr } from "../plugins/flatpickr";
+import { initFlatpickr } from "../plugins/flatpicker";
 
 
 document.addEventListener('turbolinks:load', () => {
