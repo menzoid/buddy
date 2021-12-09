@@ -9,6 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -27,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel'
 import { initMapbox } from '../plugins/init_mapbox';
+import { initFlatpickr } from "../plugins/flatpicker";
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -34,11 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initChatroomCable();
   initMapbox();
-  var cards = document.querySelectorAll('.card-flip');
-  cards.forEach((card) => {
-    card.addEventListener('click', function () {
-      console.log(card);
-      card.classList.toggle('is-flipped');
-    });
-  });
+  initFlatpickr();
 });
