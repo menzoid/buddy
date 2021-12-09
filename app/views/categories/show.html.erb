@@ -9,7 +9,9 @@
     <% end %>
   </div>
 
-  <%= link_to "Back", :back, :class => "btn btn-inverse" %>
+  <% link_to :back do %>
+    <i class="fas fa-chevron-left btn-back"></i>
+  <% end %>
 
   <h3><%= @category.name %></h3>
 
