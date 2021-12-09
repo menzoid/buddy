@@ -18,13 +18,13 @@
 
   <ul class="nav nav-tabs list-inline tabs-underlined mb-2" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true">Events</a>
+      <a class="nav-link active tab-underlined" id="myevents-tab" data-toggle="tab" href="#myevents" role="tab" aria-controls="myevents" aria-selected="true"><span>Events</span></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false">Notifications</a>
+      <a class="nav-link tab-underlined" id="nudgesin-tab" data-toggle="tab" href="#nudgesin" role="tab" aria-controls="nudgesin" aria-selected="false"><span>Notifications</span></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="nudgespending-tab" data-toggle="tab" href="#nudgespending" role="tab" aria-controls="nudgespending" aria-selected="false">Pending</a>
+      <a class="nav-link tab-underlined" id="nudgespending-tab" data-toggle="tab" href="#nudgespending" role="tab" aria-controls="nudgespending" aria-selected="false"><span>Pending</span></a>
     </li>
   </ul>
 
@@ -53,7 +53,7 @@
                 </div>
                 <div class="event-card-info p-2">
                   <div class="date-guests d-flex justify-content-between">
-                    <div class="date-time"><%= event.date.strftime("%d/%m/%Y") %> | <%= event.time.strftime("%k:%M")%></div>
+                    <div class="date-time"><%= event.date.strftime("%d %b %y") %> <strong> | </strong> <%= event.time.strftime("%k:%M")%></div>
                     <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
                   </div>
                   <p><%= event.name %></p>
@@ -72,12 +72,12 @@
         <div class="calendar-link d-flex justify-content-between align-items-center">
           <h5>My Upcoming Events</h5>
           <div class="d-flex">
-            <h5 class="mb-0 pb-0 mr-3"><i class="fas fa-map-marked-alt"></i></i></h5>
+            <h5 class="mb-0 pb-0 mr-4"><i class="fas fa-map-marked-alt"></i></i></h5>
             <h5 class="mb-0 pb-0"><i class="fas fa-calendar-alt"></i></h5>
           </div>
         </div>
-        <ul class="nav nav-tabs list-inline list-inline-scroll mb-3" id="catTab" role="tablist">
-            <li class="nav-item" role="presentation">
+        <ul class="nav nav-tabs list-inline list-inline-scroll no-scrollbar mb-2 mt-2" id="catTab" role="tablist">
+            <li class="nav-item ml-3" role="presentation">
               <a class="" id='allTab-tab' data-toggle="tab" href="#allTab" role="tab" aria-controls="allTab" aria-selected="false">All</a>
             </li>
           <% @categories.each do |category| %>
@@ -101,7 +101,7 @@
                       </div>
                       <div class="event-card-info p-2">
                         <div class="date-guests d-flex justify-content-between">
-                          <div class="date-time"><%= event.date.strftime("%d/%m/%Y") %> | <%= event.time.strftime("%k:%M")%></div>
+                          <div class="date-time"><%= event.date.strftime("%d %b %y") %> <strong> | </strong> <%= event.time.strftime("%k:%M")%></div>
                           <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
                         </div>
                         <p><%= event.name %></p>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="event-card-info p-2">
                           <div class="date-guests d-flex justify-content-between">
-                            <div class="date-time"><%= event.date.strftime("%d/%m/%Y") %> | <%= event.time.strftime("%k:%M")%></div>
+                            <div class="date-time"><%= event.date.strftime("%d %b %y") %> <strong> | </strong> <%= event.time.strftime("%k:%M")%></div>
                             <div class="guestcount"><i class="fas fa-users"></i> <%= event.bookings.count %></div>
                           </div>
                           <p><%= event.name %></p>
