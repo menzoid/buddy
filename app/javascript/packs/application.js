@@ -34,4 +34,11 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initChatroomCable();
   initMapbox();
+  var cards = document.querySelectorAll('.card-flip');
+  cards.forEach((card) => {
+    card.addEventListener('click', function () {
+      console.log(card);
+      card.classList.toggle('is-flipped');
+    });
+  });
 });

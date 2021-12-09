@@ -1,5 +1,8 @@
 
   <div class="index-head">
+    <%= link_to :back do %>
+      <div class="btn-back"><i class="fas fa-chevron-left"></i></div>
+    <% end %>
     <div class="container-event">
       <div class="event-img">
         <%= image_tag @event.photo, class: "event-pic" %>
