@@ -43,6 +43,16 @@ user_avatars = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/B
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male7_txayqs.png",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male10_z4ihxh.png",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_male8_dapmcn.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_female9_xvqbne.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_female3_zhofb4.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533369/Buddy/Profile_avatar_male3_lsc4gz.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_female8_xdajqi.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_female6_go3qzc.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_female7_uibzaw.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male9_h8dktd.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male7_txayqs.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533368/Buddy/Profile_avatar_male10_z4ihxh.png",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_male8_dapmcn.png",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638533367/Buddy/Profile_avatar_female9_xvqbne.png"]
 
 event_images = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638964847/Buddy/volleyball_j7stlq.jpg",
@@ -64,7 +74,12 @@ event_images = ["https://res.cloudinary.com/duw0kzy1b/image/upload/v1638964847/B
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638910732/Buddy/comic-con-portugal-20-cover_kpadmq.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638911242/Buddy/corrida-sao-silvestre-de-lisboa-21-cover_sqnefv.jpg",
                 "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638911143/Buddy/royal-palace-2021-22_wnhqyz.jpg",
-                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638976296/Buddy/bacalhau_ulmnpr.jpg"]
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1638976296/Buddy/bacalhau_ulmnpr.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1639134055/Buddy/wedding_crashing_wrpkvc.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1639133571/Buddy/brooding_sjpq9p.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1639134959/Buddy/carl-raw-m3hn2Kn5Bns-unsplash_ekbrnu.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1639051869/Buddy/buddy_landing2_bucbn8.jpg",
+                "https://res.cloudinary.com/duw0kzy1b/image/upload/v1639051655/Buddy/Buddy_landing_bupobm.jpg"]
 
 event_names = { "Volley and beer at Campo grande garden" => "Sports",
                 "Pilates at Work In studio" => "Mindfulness",
@@ -79,19 +94,25 @@ event_names = { "Volley and beer at Campo grande garden" => "Sports",
                 "Workshop - CEVICHE" => "Dining",
                 "LUXXXMAS @Lux Frágil" => "Partying",
                 "Alvalade Christmas Market" => "Outdoors",
-                "SoundFlower Fest" => "Live Music",
-                "Alabama Gospel Choir" => "Live Music",
-                "Tiago Bettencourt - Live" => "Live Music",
+                "SoundFlower Fest" => "Music",
+                "Alabama Gospel Choir" => "Music",
+                "Tiago Bettencourt - Live" => "Music",
                 "Comic-Con Portugal'21" => "Gaming",
                 "São Silvestre de Lisboa Race'21" => "Sports",
                 "Royal Palace 2021 - New Year's Eve" => "Partying",
-                "Tasca da Esquina" => "Dining" }
+                "Tasca da Esquina" => "Dining",
+                "Wedding crashing" => "Partying",
+                "Brooding on the beach" => "Mindfulness",
+                "Arcade Gaming is back" => "Gaming",
+                "Rise of the grill-master" => "Dining",
+                "Road-trip to nowhere" => "Travel" }
 
 event_address = ["Lumiar, Lisbon", "Cascais, Portugal", "Sintra, Portugal", "Carcavelos, Portugal", "Monsanto, Portugal",
                  "Bairro Alto, Lisbon", "Laranjeiras, Lisbon", "Beato, Lisbon", "Alverca, Portugal", "Cais do Sodre, Lisbon",
                  "Mercado da Ribeira, Lisbon", "Av Inf D Henrique, Lisbon", "Alvalade, Lisbon", "Lx Factory, Lisbon",
                  "Coliseu de Lisboa, Lisbon", "Coliseu de Lisboa, Lisbon", "Altice Arena, Lisbon", "Avenida da Liberdade, Lisbon",
-                 "Parque Eduardo VII, Lisbon", "Rua Domingos Sequeira, Lisbon"]
+                 "Parque Eduardo VII, Lisbon", "Rua Domingos Sequeira, Lisbon", "Lisbon, Portugal", "Carcavelos, Lisbon",
+                 "Bairro Alto, Lisbon", "Cascais, Portugal", "Lisbon, Portugal"]
 
 event_description = ["We'll bring our two or three nets to play volleyball at campo grande garden. Theres a cheap tapas restaurant nearby if you want to eat /drink something after.",
                      "We are inviting you to join our Pilates mat workout in a beautiful place at 'Work In studio'",
@@ -112,7 +133,12 @@ event_description = ["We'll bring our two or three nets to play volleyball at ca
                      "During the four days, there will be national and international artists from Cinema, Television, Comics, Literature, Cosplay, Anime, Manga, Videogames, Music and Youtube that will be present in panels",
                      "Usually the starting point is on Avenida da Liberdade, the race has a distance of ten kilometres, but kids and grownups can run or walk in the many races categories.",
                      "For the 7th year in a row we made an appointment on the 31st of December for a unique night in a historic and centennial place, with red carpet, an audiovisual show during the countdown and with the performance of a group of nationally renowned artists.",
-                     "A pleasant atmosphere to share our modern cuisine with traditional touch!"]
+                     "A pleasant atmosphere to share our modern cuisine with traditional touch!",
+                     "Get the ultimate prize of civilised debauchery, going back hundreds of years of tradition in making yourself a guest at a stranger´s most special day!",
+                     "Mindfully and silently join a group of strangers in a brooding session, the joy of assertive brooding is a skill and meditation technique very well regarded in northern Europe",
+                     "Arcade gaming is making a comeback! Since the early eighties during the dawn of arcade gaming, arcade game have taken many turns but never really went away. Come celebrate the heritage of arcades.",
+                     "Come join us in this grilling competition, and help crown the ultimate grill-master. No one should leave this event sober, so make arrangements accordingly. Drive safe!",
+                     "Put your safety in the hands of a complete stranger as you go on a road-trip without destination. Who knows what will happen? Life is a mistery worth not taking seriously."]
 
 event_dates = [["Sat, 11 Dec 2021", "15:30"],
                ["Mon, 13 Dec 2021", "11:00"],
@@ -133,14 +159,19 @@ event_dates = [["Sat, 11 Dec 2021", "15:30"],
                ["Sun, 12 Dec 2021", "12:00"],
                ["Mon, 27 Dec 2021", "10:00"],
                ["Fri, 31 Dec 2021", "22:00"],
-               ["Tue, 28 Dec 2021", "20:00"]]
+               ["Tue, 28 Dec 2021", "20:00"],
+               ["Tue, 02 Jan 2021", "20:00"],
+               ["Fri, 24 Jan 2021", "12:00"],
+               ["Wed, 22 Jan 2021", "20:00"],
+               ["Sun, 19 Jan 2021", "10:00"],
+               ["Tue, 20 Jan 2021", "12:00"]]
 
 puts "creating categories"
 
 categories = [
   Category.create!(name: 'Outdoors', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963375/Buddy/outdoors_2_bwssx5.png'),
   Category.create!(name: 'Sports', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963374/Buddy/sports_2_cw7lhy.png'),
-  Category.create!(name: 'Live Music', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963375/Buddy/live-music_2_zegtf7.png'),
+  Category.create!(name: 'Music', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963375/Buddy/live-music_2_zegtf7.png'),
   Category.create!(name: 'Dining', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963375/Buddy/dining_2_gykkzc.png'),
   Category.create!(name: 'Travel', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963375/Buddy/travel_b2myqz.png'),
   Category.create!(name: 'Art', photo: 'https://res.cloudinary.com/duw0kzy1b/image/upload/v1638963374/Buddy/museum_2_eh06ka.png'),
@@ -185,7 +216,7 @@ puts "real events created"
 
 i = 0
 
-20.times do
+30.times do
   username = Faker::Internet.username
   user = User.create!(
     email: "#{username}@mail.com",
@@ -209,7 +240,7 @@ i = 0
 end
 
 Event.all.each do |event|
-  User.all.sample(5).each do |user|
+  User.all.sample(rand(3..6)).each do |user|
     Booking.create!(
       intention_description: Faker::Quote.jack_handey,
       event: event,
