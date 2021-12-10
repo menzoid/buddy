@@ -48,7 +48,7 @@
           </div>
         </div>
         <ul class="hs full no-scrollbar">
-          <% @events.each do |event| %>
+          <% @mine.each do |event| %>
             <%= link_to event_bookings_path(event) do %>
               <li class="event-card">
                 <div class="event-card-photo">
@@ -100,8 +100,8 @@
           <div class="tab-pane fade show active" id="allTab" role="tabpanel" aria-labelledby="allTab-tab">
             <div class="app scroll-section">
               <ul class="hs full no-scrollbar">
-                <% @categories.first.events.each do |event| %>
-                  <%= link_to event_path(event) do %>
+                <% @events.each do |event| %>
+                  <%= link_to event_bookings_path(event) do %>
                     <li class="event-card">
                       <div class="event-card-photo">
                         <%= cl_image_tag event.photo.key %>

@@ -22,10 +22,29 @@
 
 }
 
-.welcome {
+.welcome-img {
   background-image: url("TYPE -21.jpg");
-  width: 100%;
-  height: 100%;
+    /* The image used */
+
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.signin-btn {
+  position: absolute;
+  right: 130px;
+  bottom: 130px;
+  font-variant: small-caps;
+  background-color: #f4a59c;
+  border-radius: 45px;
+  padding: 8px 34px;
+  color: white;
 }
 
 .date-name {

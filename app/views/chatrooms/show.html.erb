@@ -3,6 +3,11 @@
       <div class="btn-back"><i class="fas fa-chevron-left"></i></div>
     <% end %>
     <h3 class="top-block-heading">#<%= @chatroom.name[0..14] %></h3>
+    <div class="show-buttons" id="add-chat">
+      <button type="button" class="btn add-chat" data-toggle="modal" data-target="#inviteModal">
+        <p><i class="fas fa-plus"></i></p>
+      </button>
+    </div>
 </div>
 
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
@@ -15,10 +20,4 @@
   <% end %>
   </div>
 </div>
-
-<%# <div class="show-buttons">
-  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#inviteModal">
-    Invite people
-  </button>
-</div>
-<%= render 'invite_people', users_available: @users_available, chatroom: @chatroom%>
+    <%= render 'invite_people', users_available: @users_available, chatroom: @chatroom %>
