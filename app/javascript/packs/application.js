@@ -9,6 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -21,7 +23,7 @@ ActiveStorage.start()
 // External imports
 import "controllers"
 import "bootstrap";
-
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -31,13 +33,14 @@ import { flipCard } from '../plugins/card_flip';
 import { navLight } from "../plugins/navbar_highlight"
 
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
   initMapbox();
   flipCard();
-  navLight()
+  navLight();
   // var cards = document.querySelectorAll('.card-flip');
   // cards.forEach((card) => {
   //   card.addEventListener('click', function () {
