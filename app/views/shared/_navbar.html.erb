@@ -8,7 +8,7 @@
       </div>
     <% end %>
   </div>
-  <div class="highlight <% if controller_path == "events" %> shine  <% end %>">
+  <div class="highlight <% if controller_path == "events" || controller_path == "categories" %> shine  <% end %>">
     <%= link_to events_path do %>
       <div class="nav-icon">
         <i class="navbar-icon fas fa-angle-double-up"></i>
