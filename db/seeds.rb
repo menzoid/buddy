@@ -17,7 +17,7 @@ event1 = Event.new(
     category: Category.find_by(name: "Mine"),
     start_time: "2021-01-12 10:00:00.000000000 +0000"
   )
-  file = URI.open("https://unsplash.com/photos/T69h1_YfR-w")
+  file = URI.open("https://res.cloudinary.com/duw0kzy1b/image/upload/v1639153743/Buddy/chase-clark-T69h1_YfR-w-unsplash_dovrrf.jpg")
   event1.photo.attach(io: file, filename: "search.jpg", content_type: 'image/jpg')
   event1.save!
 
@@ -30,7 +30,7 @@ event2 = Event.new(
     category: Category.find_by(name: "Mine"),
     start_time: "2021-01-14 15:00:00.000000000 +0000"
   )
-  file = URI.open("https://unsplash.com/photos/52Kf36w124Y")
+  file = URI.open("https://res.cloudinary.com/duw0kzy1b/image/upload/v1639153743/Buddy/maxim-hopman-52Kf36w124Y-unsplash_hddsoi.jpg")
   event2.photo.attach(io: file, filename: "search2.jpg", content_type: 'image/jpg')
   event2.save!
 
@@ -44,6 +44,6 @@ event3 = Event.new(
     category: Category.find_by(name: "Mine"),
     start_time: "2021-01-16 16:00:00.000000000 +0000"
   )
-  file = URI.open("https://unsplash.com/photos/KHqAv9qQJD8")
+  file = URI.open("https://res.cloudinary.com/duw0kzy1b/image/upload/v1639153743/Buddy/jan-kopriva-KHqAv9qQJD8-unsplash_k9pd5u.jpg")
   event3.photo.attach(io: file, filename: "search3.jpg", content_type: 'image/jpg')
   event3.save!
