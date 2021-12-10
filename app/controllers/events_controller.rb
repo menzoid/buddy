@@ -38,10 +38,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @markers = [{
-      lat: @event.latitude,
-      lng: @event.longitude
-    }]
     @booking = Booking.new
     to_show = current_user.bookings.map { |booking| booking.event_id == @event.id ? true : false  }
     @show_join = !to_show.include?(true)
