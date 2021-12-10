@@ -47,7 +47,7 @@
   color: $white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $red;
+  background: $orange;
   transition: background 0.3s ease;
 }
 
@@ -58,6 +58,12 @@
   opacity: 0.9;
   background: $orange;
   transform: skew(18deg);
+
+  p {
+    transform: skew(-18deg);
+    margin-bottom: 0px;
+    font-variant: small-caps;
+  }
 }
 
 .btn-booking {

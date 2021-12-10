@@ -1,7 +1,7 @@
 .intention-item {
   display: inline-flex;
   //padding: 10px 10px 10px 5px;
-  margin-left:auto;
+  margin-left: 7px;
   padding: 7px;
 }
 
@@ -17,17 +17,20 @@
 .intention-selector + label {
   cursor: pointer;
   display: space-around;
+  align-items: center;
+  text-decoration: none;
   font-size: 1rem;
-  border-radius: 10rem;
-  padding: 0.1rem 0.5rem;
-  background-color: #E9C891;
-  color: black;
-  border: 1.5px solid #e69935;
-  margin-bottom: 0.2rem;
-  text-align: center;
+  border-radius: 5px;
+  transform: skewX(18deg);
+  padding: 4px 8px;
+  background-color: #f4a59c;
+  color: $light-gray;
+  margin: 3px 0 0 0px;
+  // text-align: center;
+  font-variant: small-caps;
 }
 
 .intention-selector:checked + label {
-  background-color: $red;
+  background-color: $orange;
   color: white;
 }

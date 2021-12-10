@@ -27,4 +27,6 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "pages#dashboard"
   get "welcome", to: "pages#welcome"
+  get "mycalendar", to: "pages#mycalendar"
+  get "mymap", to: "pages#mymap"
 end

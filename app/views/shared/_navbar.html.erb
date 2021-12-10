@@ -1,20 +1,26 @@
 <div class="navbar fixed-bottom navbar-expand navbar-light navbar-buddy">
-  <%= link_to dashboard_path do %>
-    <div class="nav-icon">
-      <i class="navbar-icon fas fa-home"></i>
-      <p>HOME</p>
-    </div>
-  <% end %>
-  <%= link_to events_path do %>
-    <div class="nav-icon">
-      <i class="navbar-icon fas fa-angle-double-up"></i>
-      <p>VIBES</p>
-    </div>
-  <% end %>
-  <%= link_to chatrooms_path do %>
-    <div class="nav-icon">
-      <i class="navbar-icon fas fa-comments"></i>
-      <p>CHATS</p>
-    </div>
-  <% end %>
+  <div class="highlight">
+    <%= link_to dashboard_path do %>
+      <div class="nav-icon">
+        <i class="navbar-icon fas fa-home"></i>
+        <p>DASHBOARD</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="highlight">
+    <%= link_to events_path do %>
+      <div class="nav-icon">
+        <i class="navbar-icon fas fa-angle-double-up"></i>
+        <p>VIBES</p>
+      </div>
+    <% end %>
+  </div>
+  <div class="highlight">
+    <%= link_to chatrooms_path do %>
+      <div class="nav-icon">
+        <i class="navbar-icon fas fa-comments"></i>
+        <p>CHATS</p>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -23,13 +23,13 @@
 
   <ul class="nav nav-tabs list-inline tabs-underlined mt-3" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active tab-underlined" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+      <a class="nav-link active tab-underlined" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true"><p>Description</p></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="guests-tab" data-toggle="tab" href="#guests" role="tab" aria-controls="guests" aria-selected="false">Attendees</a>
+      <a class="nav-link tab-underlined" id="guests-tab" data-toggle="tab" href="#guests" role="tab" aria-controls="guests" aria-selected="false"><p>Attendees</p></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link tab-underlined" id="intention-tab" data-toggle="tab" href="#intention" role="tab" aria-controls="intention" aria-selected="false">Intention</a>
+      <a class="nav-link tab-underlined" id="intention-tab" data-toggle="tab" href="#intention" role="tab" aria-controls="intention" aria-selected="false"><p>Intention</p></a>
     </li>
   </ul>
 
@@ -60,18 +60,16 @@
       <div class="mb-2 mt-4 container">
         <div>
           <% @bookings.each do |booking|  %>
-            <% if booking.user != @user%>
-              <%= link_to booking_path(booking), method: :get do %>
-                <div class="notification mb-2">
+            <%= link_to booking_path(booking), method: :get do %>
+              <div class="request mb-2">
+                <div class="request-user-infos">
                   <%= cl_image_tag booking.user.profile.photo.key, class: 'avatar-large' %>
-                  <div class="notification-content">
-                    <p><small>Intention: <%= booking.intention.name %></small></p>
-                    <p><strong><%= booking.user.profile.username %></strong></p>
-                  </div>
-                  <div class="notification-actions">
-                  </div>
                 </div>
-              <% end %>
+                <div class="request-content">
+                  <p class=><%= booking.user.profile.username %></p>
+                  <p><%= booking.intention.name %></p>
+                </div>
+              </div>
             <% end %>
           <% end  %>
         </div>

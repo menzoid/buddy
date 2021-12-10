@@ -29,6 +29,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel'
 import { initMapbox } from '../plugins/init_mapbox';
+import { flipCard } from '../plugins/card_flip';
+import { navLight } from "../plugins/navbar_highlight"
 
 
 
@@ -37,4 +39,13 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initChatroomCable();
   initMapbox();
+  flipCard();
+  navLight();
+  // var cards = document.querySelectorAll('.card-flip');
+  // cards.forEach((card) => {
+  //   card.addEventListener('click', function () {
+  //     console.log(card);
+  //     card.classList.toggle('is-flipped');
+  //   });
+  // });
 });

@@ -147,39 +147,34 @@
         <% end %>
         </div>
       </div>
-        <%# ----- Calendar  ------- %>
-
-      <div class="calendar-container">
-        <%= month_calendar(events: @events_month) do |date, events| %>
-          <%= date %>
-          <% events.each do |event| %>
-            <div class="events_month">
-              <p><%= link_to event.name[0..6], event_path(event) %></p>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
     </div>
 
                         <%# Notifcations %>
 
     <div class="tab-pane fade" id="nudgesin" role="tabpanel" aria-labelledby="nudgesin-tab">
       <div class=" mb-2 mt-3 mr-2 ml-2 info-section">
-         <% @notifications.each do |notification|  %>
-          <div class="notification mb-2">
-            <div class="request-user-infos">
-              <%= cl_image_tag notification.requester.user.profile.photo.key, class: 'avatar-big' %>
-              <p><%= notification.requester.user.profile.username %></p>
-            </div>
-            <div class="notification-content">
-              <div class="notification-details">
-                <h5 class="notification-event mt-3"><small class="mr-1">for: </small><%= notification.requester.event.name[0..40] %></h5>
-                <h6 class="text-right"><small class="mr-1">sent on: </small><%= notification.created_at.strftime("%d %m") %></h6>
+        <% @notifications.each do |notification|  %>
+          <div class="card-whole">
+            <div class="notification mb-2">
+              <div class="request-user-infos">
+                <%= cl_image_tag notification.requester.user.profile.photo.key, class: 'avatar-big' %>
+                <p><%= notification.requester.user.profile.username %></p>
               </div>
-
+              <div class="notification-content">
+                <div class="notification-details">
+                  <h5 class="notification-event"><small class="mr-1">for: </small><%= notification.requester.event.name %></h5>
+                </div>
+              </div>
+              <h6 class="sent-time"><small class="mr-1">sent on: </small><%= notification.created_at.strftime("%d %m") %></h6>
+            </div>
               <%# hidden div with reason and actions %>
+            <div class="notification hidden mb-2">
+              <div class="request-user-infos">
+                <%= cl_image_tag notification.requester.user.profile.photo.key, class: 'avatar-big' %>
+                <p><%= notification.requester.user.profile.username %></p>
+              </div>
               <div class="notification-reason">
-                <p class= "reason-comment mt-3">"<%= notification.reason %>"</p>
+                <p class= "reason-comment">"<%= notification.reason %>"</p>
                 <div class="notification-actions">
                   <%= link_to accept_request_url(notification), method: :patch do %>
                     <p>accept <i class="fas fa-check-circle text-success"></i></p>
@@ -191,7 +186,7 @@
               </div>
             </div>
           </div>
-         <% end  %>
+        <% end  %>
       </div>
     </div>
 
@@ -199,7 +194,8 @@
 
     <div class="tab-pane fade" id="nudgespending" role="tabpanel" aria-labelledby="nudgespending-tab">
       <div class="info-section mb-2 mt-3 mr-2 ml-2">
-         <% @requests.each do |request|  %>
+        <% @requests.each do |request|  %>
+          <div class="card-whole">
           <div class="request mb-2">
             <div class="request-user-infos">
               <%= cl_image_tag request.requestee.user.profile.photo.key, class: 'avatar-large' %>
@@ -207,11 +203,21 @@
             </div>
             <div class="request-content">
               <%# <p class= "reason-comment mt-3">""</p> %>
-              <h5 class="request-event mt-3"><small class="mr-1">for: </small><%= request.requestee.event.name[0..40] %></h5>
-              <h6 class="text-right"><small class="mr-1">sent on:</small> <%= request.created_at.strftime("%d %b") %></h6>
+              <h5 class="request-event"><small class="mr-1">for: </small><%= request.requestee.event.name %></h5>
+            </div>
+            <h6 class="sent-time"><small class="mr-1">sent on:</small> <%= request.created_at.strftime("%d %b") %></h6>
+          </div>
+          <div class="request hidden mb-2">
+            <div class="request-user-infos">
+              <%= cl_image_tag request.requestee.user.profile.photo.key, class: 'avatar-large' %>
+              <p><%= request.requestee.user.profile.username %></p>
+            </div>
+            <div class="request-content">
+              <p class= "reason-comment">"<%= request.reason %>"</p>
             </div>
           </div>
-         <% end  %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
