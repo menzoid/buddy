@@ -28,6 +28,7 @@ import "bootstrap";
 import { initChatroomCable } from '../channels/chatroom_channel'
 import { initMapbox } from '../plugins/init_mapbox';
 import { flipCard } from '../plugins/card_flip';
+import { navLight } from "../plugins/navbar_highlight"
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -36,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initMapbox();
   flipCard();
+  navLight()
   // var cards = document.querySelectorAll('.card-flip');
   // cards.forEach((card) => {
   //   card.addEventListener('click', function () {
