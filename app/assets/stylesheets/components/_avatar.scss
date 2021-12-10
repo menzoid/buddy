@@ -1,12 +1,21 @@
 .avatar {
-  width: 30px;
+  width: 26px;
   border-radius: 50%;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .avatar-large {
   width: 40px;
   border-radius: 50%;
   opacity: 0.6;
+}
+
+.avatar-profile {
+  width: 80px;
+  border-radius: 50%;
+  opacity: 0.8;
+  position: absolute;
+  right: 150px;
+  top: 15px;
 }
 
 .avatar-bordered {
