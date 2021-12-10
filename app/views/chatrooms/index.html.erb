@@ -6,6 +6,7 @@
 </div>
 
   <% @chatrooms.each do |chatroom|  %>
+     <% if chatroom.messages.present? %>
       <div class="card-whole mr-2 mb-1 ml-2">
         <div class="chatroom">
           <div class="chatroom-photo">
@@ -13,6 +14,7 @@
               <%= cl_image_tag chatroom.users.first.profile.photo.key, class: 'avatar-big' %>
             <% end %>
           </div>
+
           <div class="chatroom-content">
             <div class="name-date d-flex justify-content-between">
               <p><%= chatroom.users.first.profile.username %></p>
@@ -38,4 +40,7 @@
           </div>
         </div>
       </div>
+      <% else %>
+      <h1></h1>
+      <% end %>
   <% end %>
