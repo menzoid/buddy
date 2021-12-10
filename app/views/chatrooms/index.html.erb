@@ -10,12 +10,12 @@
         <div class="chatroom">
           <div class="chatroom-photo">
             <%= link_to chatroom_path(chatroom) do %>
-              <%= cl_image_tag chatroom.users[0].profile.photo.key, class: 'avatar-big' %>
+              <%= cl_image_tag chatroom.users.first.profile.photo.key, class: 'avatar-big' %>
             <% end %>
           </div>
           <div class="chatroom-content">
             <div class="name-date d-flex justify-content-between">
-              <p><%= chatroom.users[0].profile.username %></p>
+              <p><%= chatroom.users.first.profile.username %></p>
               <p class="name-date-time"><%= chatroom.messages.last.created_at.strftime('%l:%M%P') %></p>
             </div>
             <p><small><em> <%= chatroom.messages.last.content[0..40] %> </em></small></p>
