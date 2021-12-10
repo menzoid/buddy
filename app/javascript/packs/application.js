@@ -28,7 +28,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel';
-// import { initMapbox } from '../plugins/init_mapbox';
+import { initMapbox } from '../plugins/init_mapbox';
 import { flipCard } from '../plugins/card_flip';
 // import { navLight } from '../plugins/navbar_highlight';
 
@@ -38,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
-  // initMapbox();
+  initMapbox();
   flipCard();
   // navLight();
   // var cards = document.querySelectorAll('.card-flip');
