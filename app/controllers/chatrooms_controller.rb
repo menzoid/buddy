@@ -14,6 +14,6 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = current_user.chatrooms
-    @chatrooms_sorted = @chatrooms.sort_by { |chatroom| chatroom.messages.last.updated_at }.reverse
+    # @chatrooms_sorted = @chatrooms.sort_by { |chatroom| chatroom.messages.last.updated_at }.reverse
   end
 end
