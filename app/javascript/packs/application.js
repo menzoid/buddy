@@ -30,7 +30,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initChatroomCable } from '../channels/chatroom_channel';
 // import { initMapbox } from '../plugins/init_mapbox';
 import { flipCard } from '../plugins/card_flip';
-import { navLight } from '../plugins/navbar_highlight';
+// import { navLight } from '../plugins/navbar_highlight';
 
 
 
@@ -40,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   // initMapbox();
   flipCard();
-  navLight();
+  // navLight();
   // var cards = document.querySelectorAll('.card-flip');
   // cards.forEach((card) => {
   //   card.addEventListener('click', function () {
