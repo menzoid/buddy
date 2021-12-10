@@ -39,4 +39,11 @@
         </div>
       </div>
 
-<h1>Map Here</h1>
+
+  <div class="mapbox-map">
+    <div id="map"
+          style="width: 100%;heigth:100%; margin-bottom:0px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
