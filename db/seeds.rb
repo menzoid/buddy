@@ -14,7 +14,7 @@ event1 = Event.new(
     description: "The myth is real! We who believe the creator still walks among us, let´s pull our resources together and scout for clues of the creator´s whereabouts. In my neighborhood...",
     date: "Tue, 12 Jan 2021",
     time: "10:00",
-    category: "Mine",
+    category: Category.find_by(name: "Mine"),
     start_time: "2021-01-12 10:00:00.000000000 +0000"
   )
   file = URI.open("https://unsplash.com/photos/T69h1_YfR-w")
@@ -27,7 +27,7 @@ event2 = Event.new(
     description: "The idea is to get drunk and choose matching tatoos, while sipping ginjinhas ! lets celebrate the accomplishments of many generations of bohemian living.",
     date: "Tue, 14 Jan 2021",
     time: "15:00",
-    category: "Mine",
+    category: Category.find_by(name: "Mine"),
     start_time: "2021-01-14 15:00:00.000000000 +0000"
   )
   file = URI.open("https://unsplash.com/photos/52Kf36w124Y")
@@ -41,7 +41,7 @@ event3 = Event.new(
     description: "We propose to attack the gnarly hills of Lisbon in an extreme urban mountain-biking mad-dash. The survivors will get a free pastel de nata.",
     date: "Tue, 16 Jan 2021",
     time: "16:00",
-    category: "Mine",
+    category: Category.find_by(name: "Mine"),
     start_time: "2021-01-16 16:00:00.000000000 +0000"
   )
   file = URI.open("https://unsplash.com/photos/KHqAv9qQJD8")
