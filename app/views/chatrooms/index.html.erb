@@ -6,7 +6,7 @@
 </div>
 
   <% @chatrooms_sorted.each do |chatroom|  %>
-      <div class="card-whole mr-2 mb-2 ml-2">
+      <div class="card-whole mr-2 mb-1 ml-2">
         <div class="chatroom">
           <div class="chatroom-photo">
             <%= link_to chatroom_path(chatroom) do %>
@@ -18,7 +18,7 @@
               <p><%= chatroom.users[0].profile.username %></p>
               <p class="name-date-time"><%= chatroom.messages.last.created_at.strftime('%l:%M%P') %></p>
             </div>
-            <p><small><em> <%= chatroom.messages.last.content %> </em></small></p>
+            <p><small><em> <%= chatroom.messages.last.content[0..40] %> </em></small></p>
           </div>
         </div>
         <div class="chatroom hidden">

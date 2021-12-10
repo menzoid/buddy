@@ -1,29 +1,28 @@
 
  <% if message.user_id == current_user.id %>
-  <div class="message-container current-user" id="message-<%= message.id %>">
-    <div class="messages-user">
-      <%= cl_image_tag message.user.profile.photo.key, class: 'avatar-large' %>
-      <div class="messages-content">
-        <p><small><%= message.user.profile.username %></small></p>
-        <p><%= message.content %></p>
-        <h6><%= message.created_at.strftime("%l:%M%p") %></h6>
-      </div>
-      <div class="messages-actions">
-      </div>
+  <div class="message-user float-right mr-2" id="message-<%= message.id %>">
+    <div class="message-user-content">
+      <p><%= message.content %></p>
+    </div>
+      <h6 class="message-user-time"><%= message.created_at.strftime("%l:%M") %></h6>
+    <div class="message-user-photo">
+      <%= cl_image_tag message.user.profile.photo.key, class: 'avatar' %>
+      <p><small>me</small></p>
     </div>
   </div>
 
+
   <% else %>
-  <div class="message-container other" id="message-<%= message.id %>">
-    <div class="messages-contacts">
-      <%= cl_image_tag message.user.profile.photo.key, class: 'avatar-large' %>
-      <div class="messages-content">
+  <div class="message-guest" id="message-<%= message.id %>">
+    <div class="message-guest-main">
+      <div class="message-guest-photo">
+        <%= cl_image_tag message.user.profile.photo.key, class: 'avatar' %>
+      </div>
+      <div class="message-guest-content">
         <p><small><%= message.user.profile.username %></small></p>
         <p><%= message.content %></p>
-        <h6><%= message.created_at.strftime("%l:%M%p") %></h6>
-      </div>
-      <div class="messages-actions">
       </div>
     </div>
+    <h6><%= message.created_at.strftime("%l:%M") %></h6>
   </div>
 <% end %>

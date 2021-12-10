@@ -1,23 +1,30 @@
+<div class="top-block-small">
+    <%= link_to :back do %>
+      <div class="btn-back"><i class="fas fa-chevron-left"></i></div>
+    <% end %>
+    <%= cl_image_tag @buddy.profile.photo.key, class: "avatar-profile"%>
+    <h3 class="top-block-heading"><%=@buddy.profile.username  %> </h3>
+</div>
+
 <div class="container">
   <div class="buddy-profile text-center">
-    <%= cl_image_tag @buddy.profile.photo.key %>
-    <h4 class="mt-2"><%=@buddy.profile.username  %> </h4>
+
   </div>
   <div class="intention-info mt-4">
-    <h5>Their intention</h5>
-    <p>Type: <%=@booking.intention.name %> </p>
+    <h4><i class="fas fa-angle-double-right mr-1"></i> Why they dig this vibe</h4>
     <p><%=@booking.intention_description %> </p>
+    <p class="btn btn-intent d-flex justify-content-end"><em><%=@booking.intention.name %> </em></p>
   </div>
   <div class="buddy-info">
-    <h5>About them</h5>
+    <h4><i class="fas fa-angle-double-right mr-1"></i> A bit about them</h4>
     <p><%= @buddy.profile.bio %></p>
   </div>
 
 
 
-  <div class="show-buttons Send Request">
-  <button type="button" class="btn btn-create" data-toggle="modal" data-target="#requestModal">
-    Send Request
+  <div class="show-buttons d-flex justify-content-center Send Request mt-3">
+  <button type="button" class="btn btn-join mt-3" data-toggle="modal" data-target="#requestModal">
+    <p>Send Request</p>
   </button>
   </div>
   <%= render 'request_modal', booking: @booking, request: @request%>
