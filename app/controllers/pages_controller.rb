@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings
     # @bookings_all = Booking.all
     @events = current_user.events
+    @mine = @events.select { |event| event.category == "Mine"}
     @categories = Category.all
     # @notifications = @bookings.requests_as_requestee
     # @requests = @bookings.requests_as_requester

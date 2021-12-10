@@ -1,50 +1,5 @@
-<div class="top-landing mb-3">
-  <div class="text-center">
-    <h2>Welcome to Buddy</h2>
-    <p><em>find and share new experiences</em></p>
-  </div>
-</div>
-<div class="welcome-main-container">
-  <div class="welcome-container">
-
-
-<div class="container">
-  </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active" id="welcome">
-          <%= image_tag "https://res.cloudinary.com/duw0kzy1b/image/upload/v1639062709/Buddy/choosing_experience_k1cppn.png", class: "d-block w-100" %>
-          <div class="carousel-text"><p>find an experience</p></div>
-          <span>there´s an immense world out there to explore and flavourfull experiences to cherish</span>
-        </div>
-        <div class="carousel-item" id="welcome">
-          <%= image_tag "https://res.cloudinary.com/duw0kzy1b/image/upload/v1639062534/Buddy/chosing_buddy_qez4rm.png", class: "d-block w-100" %>
-          <div class="carousel-text"><p>let your vibe find your tribe</p></div>
-          <span>like everything in life, it´s better if you can share it!</span>
-        </div>
-        <div class="carousel-item" id="welcome">
-          <%= image_tag "https://res.cloudinary.com/duw0kzy1b/image/upload/c_scale,h_697/v1639063084/Buddy/enjoying_gfhhyi.png", class: "d-block w-100" %>
-          <div class="carousel-text"><p>enjoy your shared experiences!</p></div>
-          <span>you´ll be amazed to find how many people would love to join your adventures</span>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    <a>
-    <%= link_to "get started!", new_profile_path, class: "btn btn-signup mb-3" %>
-    </a>
-    <a>
-    <p>already have an account? <%= link_to "Login", new_user_session_path, class: "link" %></p></a>
+<div class="welcome-img">
+  <%= link_to new_user_session_path do %>
+  <p class="signin-btn">Vibe</p>
+  <% end %>
 </div>
