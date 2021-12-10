@@ -1,5 +1,6 @@
+
 <div class="navbar fixed-bottom navbar-expand navbar-light navbar-buddy">
-  <div class="highlight">
+  <div class="highlight <% if controller_path == "pages" %> shine  <% end %>">
     <%= link_to dashboard_path do %>
       <div class="nav-icon">
         <i class="navbar-icon fas fa-home"></i>
@@ -7,7 +8,7 @@
       </div>
     <% end %>
   </div>
-  <div class="highlight">
+  <div class="highlight <% if controller_path == "events" %> shine  <% end %>">
     <%= link_to events_path do %>
       <div class="nav-icon">
         <i class="navbar-icon fas fa-angle-double-up"></i>
@@ -15,7 +16,7 @@
       </div>
     <% end %>
   </div>
-  <div class="highlight">
+  <div class="highlight <% if controller_path == "chatrooms" %> shine  <% end %>">
     <%= link_to chatrooms_path do %>
       <div class="nav-icon">
         <i class="navbar-icon fas fa-comments"></i>
